@@ -189,7 +189,7 @@ AddCommodity credits 100000","""Oh! Captain, yes, of course,"" Sebestyen says, f
 ""嗯，"" 他开始说。","gaATG_postSebestyenGetPaid3:""Yes?""
 gaATG_postSebestyenGetPaid4:""Come on, out with it.""
 cutCommLink:Cut the comm link","gaATG_postSebestyenGetPaid3:""是吗?""
-gaATG_postSebestyenGetPaid4:""来啊，别害羞，说出来。""
+gaATG_postSebestyenGetPaid4:""来啊，说出来。""
 cutCommLink:切断通讯连接",,
 gaATGpostSebestyenGetPaid3,DialogOptionSelected,$option == gaATG_postSebestyenGetPaid3,,"""I- I just wanted to say thank you,"" he says. ""For um, it's been an honor to be a part of- of making history. I guess.""","""我，我刚才只是想说谢谢，"" 他说道。 ""我猜，呃... 能成为 呃... 创造历史的一份子是一种荣誉。""","gaATG_postSebestyenGetPaid3b:""I couldn't have done it without you.""
 gaATG_postSebestyenGetPaid3c:""Yeah. Don't mention it.""","gaATG_postSebestyenGetPaid3b:""多亏了你。""
@@ -198,59 +198,74 @@ gaATGpostSebestyenGetPaid3b,DialogOptionSelected,$option == gaATG_postSebestyenG
 
 He manages to hit the comm-link cutoff on his second try.","""谢... 谢谢你。我是说，是的"" 他显然脸红了。 ""再见。""
 
-在第二次尝试时，他终于切断了通信连接。",cutCommLink:Cut the comm link,cutCommLink:切断通讯连接,,
+他尝试了两次才切断了通信连接。",cutCommLink:Cut the comm link,cutCommLink:切断通讯连接,,
 gaATGpostSebestyenGetPaid3c,DialogOptionSelected,$option == gaATG_postSebestyenGetPaid3c,AdjustRepActivePerson COOPERATIVE 1,"""I, uh. Yeah. I won't."" Sebestyen attempts his best devil-may care spacer nod.
 
 It could use some work.
 
-""C-catch you around. Captain,"" he says, and manages to hit the comm-link cutoff on his second try.","
-",cutCommLink:Cut the comm link,,,
+""C-catch you around. Captain,"" he says, and manages to hit the comm-link cutoff on his second try.","""我，呃。当然，我不会。"" Sebestyen 见鬼地点了个头。
+
+它可能需要一些工作。
+
+""一... 一路顺风。舰长，"" 他说着，并尝试了两次才切断了通讯连接。",cutCommLink:Cut the comm link,cutCommLink:切断通讯连接,,
 gaATGpostSebestyenGetPaid4,DialogOptionSelected,$option == gaATG_postSebestyenGetPaid4,,"""Um, nothing captain,"" he says quickly. ""Don't mean to take any more of your time. Good day. Captain.""
 
-He manages to hit the comm-link cutoff on his second try.","
-",cutCommLink:Cut the comm link,,,
+He manages to hit the comm-link cutoff on his second try.","""嗯，没什么事，舰长，"" 他马上说道. ""就不占用你时间了。向你问好，舰长。""
+
+他尝试了两次才切断通讯连接。",cutCommLink:Cut the comm link,cutCommLink:切断通讯连接,,
 gaATGpostSebestyenProvost,PopulateOptions,"$isPerson
 $id == sebestyen score:1000
 $global.gaATG_missionCompleted
 !$askedProvostUpset",,,"
-","gaATG_postSebestyenProvost2:""The provost seemed a bit upset last we spoke.""",,,
+","gaATG_postSebestyenProvost2:""The provost seemed a bit upset last we spoke.""","gaATG_postSebestyenProvost2:""上次我们谈话时，院长似乎有点不高兴。""",,
 gaATGpostSebestyenProvost2,DialogOptionSelected,$option == gaATG_postSebestyenProvost2,,"""Ah, um. Yes."" Sebestyen looks incredibly uncomfortable.
 
 ""It's been... difficult,"" he says. ""For us all, I'm sure."" 
 
-He coughs, and his eyes roam like he's looking for an escape pod.","
+He coughs, and his eyes roam like he's looking for an escape pod.","""呃，嗯。是的。"" Sebestyen 看起来有点不舒服。
+
+""这... 很难，"" 他说道。""对我们所有人来说，我确信。"" 
+
+他咳嗽了几声，眼神四处游荡，就像在寻找逃生舱。
 ","gaATG_postSebestyenGoodJob:""You've done a good job, Alviss. We did some great things together.""
 gaATG_postSebestyenBairdBad:""I don't see how you're so loyal, the way Baird treats everyone.""
-gaATG_postSebestyenSomethingElse:""Maybe we should talk about something else.""",,,
+gaATG_postSebestyenSomethingElse:""Maybe we should talk about something else.""","gaATG_postSebestyenGoodJob:""做的不错，Alviss。我们一起干了件大事。""
+gaATG_postSebestyenBairdBad:""我不明白你为何这么忠诚，就像Baird对待每个人那样。""
+gaATG_postSebestyenSomethingElse:""也许我们该说点别的。""",,
 gaATGpostSebestyenGoodJob,DialogOptionSelected,$option == gaATG_postSebestyenGoodJob,"AdjustRepActivePerson COOPERATIVE 5
 $askedProvostUpset = true
-FireAll PopulateOptions","He looks at you for a long moment, then simply says ""Thank you.""","
-",,,,
+FireAll PopulateOptions","He looks at you for a long moment, then simply says ""Thank you.""","他盯着你看了好一会，说了声 ""谢谢。""",,,,
 gaATGpostSebestyenBairdBad,DialogOptionSelected,$option == gaATG_postSebestyenBairdBad,,"""W-well, she's been under a lot of pressure. And,"" he doesn't meet your eye as he speaks. ""She just, just doesn't have time to think about people's feelings so much when, when there are such big problems, and things.""
 
-""That's just how, um, great people are sometimes,"" he concludes quietly.","
-","gaATG_postSebestyenBairdBadA:""They don't need to be.""
+""That's just how, um, great people are sometimes,"" he concludes quietly.","""嗯...好吧。她压力挺大的。并且，"" 他眼神闪烁地说道，""她只是... 只是没有时间去充分考虑人们的感受，当... 当出了这么大的问题时。""
+
+""这就是... 呃... 人民有时是如此伟大。"" 他轻声总结道。","gaATG_postSebestyenBairdBadA:""They don't need to be.""
 gaATG_postSebestyenBairdBadB:""This is true.""
-gaATG_postSebestyenBairdBadC:""Let's talk about something else.""",,,
+gaATG_postSebestyenBairdBadC:""Let's talk about something else.""","gaATG_postSebestyenBairdBadA:""他们不需要这样。""
+gaATG_postSebestyenBairdBadB:""好吧。""
+gaATG_postSebestyenBairdBadC:""还是说点别的吧。""",,
 gaATGpostSebestyenBairdBadA,DialogOptionSelected,$option == gaATG_postSebestyenBairdBadA,"AdjustRepActivePerson COOPERATIVE 2
 $askedProvostUpset = true
 FireAll PopulateOptions","Sebestyen looks up at you, unsure.
 
 ""M-maybe not,"" he says, unsure. Then seems to realize who he's talking to. ""Captain.""
 
-""Um, is there anything else I can help you with?""","
-",,,,
+""Um, is there anything else I can help you with?""","Sebestyen 抬头看着你，将信将疑。
+
+""也...也许，"" 他不确定地说道。然后似乎意识到了他在跟谁说话，""舰长。""
+
+""嗯，有什么别的事情能为你效劳吗?""",,,,
 gaATGpostSebestyenBairdBadB,DialogOptionSelected,$option == gaATG_postSebestyenBairdBadB,"$askedProvostUpset = true
 FireAll PopulateOptions","Sebestyen nods. 
 
-""So, um. Captain. Is there anything else I can help you with?""","
-",,,,
+""So, um. Captain. Is there anything else I can help you with?""","Sebestyen 点了点头. 
+
+""所以，呃... 舰长。有什么其他的我能帮您的吗?""",,,,
 gaATGpostSebestyenBairdBadC,DialogOptionSelected,$option == gaATG_postSebestyenBairdBadC,"$askedProvostUpset = true
 FireAll PopulateOptions","Sebestyen nods, his relief plain on his face.","
-",,,,
+Sebestyen 点了点头，脸上显得很轻松。",,,,
 gaATGpostSebestyenSomethingElse,DialogOptionSelected,$option == gaATG_postSebestyenSomethingElse,"$askedProvostUpset = true
-FireAll PopulateOptions","""Yes, yes that's be good,"" he says quickly.","
-",,,,
+FireAll PopulateOptions","""Yes, yes that's be good,"" he says quickly.","""是的，是的，那太好了。"" 他马上说道。",,,,
 ,,,,,"
 ",,,,
 # Talk to Gargoyle after gaATG,,,,,"
@@ -259,16 +274,18 @@ gaATGpostGargoyleAsk,PopulateOptions,"$isPerson
 $id == gargoyle score:1000
 $global.gaATG_missionCompleted
 !$askedProvostThrown",,,"
-","gaATG_postGargoyleAsk2:""So Baird hasn't thrown you over to the Hegemony yet?""",,,
-gaATGpostGargoyleAsk2,DialogOptionSelected,$option == gaATG_postGargoyleAsk2,,"""Naw. We've got too much to offer one another,"" Gargoyle says casually. ""Me: peerless skill, wit, and resourcefulness. Her: boundless ambition exceeded only by her resentment.""","
-","gaATG_postGargoyleAsk3:""Is that it?""",,,
+","gaATG_postGargoyleAsk2:""So Baird hasn't thrown you over to the Hegemony yet?""","gaATG_postGargoyleAsk2:""所以 Baird 还没有把你扔到霸主吗?""",,
+gaATGpostGargoyleAsk2,DialogOptionSelected,$option == gaATG_postGargoyleAsk2,,"""Naw. We've got too much to offer one another,"" Gargoyle says casually. ""Me: peerless skill, wit, and resourcefulness. Her: boundless ambition exceeded only by her resentment.""","""不，我们彼此互补的地方太多了。"" Gargoyle 随便地说道。 ""我: 无与伦比的技巧、风趣、足智多谋。 她：只有怨恨才能超越的无尽野心。""","gaATG_postGargoyleAsk3:""Is that it?""","gaATG_postGargoyleAsk3:""是这样吗?""",,
 gaATGpostGargoyleAsk3,DialogOptionSelected,$option == gaATG_postGargoyleAsk3,"$askedProvostThrown = true
 FireAll PopulateOptions","The hacker ticks off an additional finger, ""Me: the dirt, from both near and afar."" 
 
 Another finger, ""Her: credits, legitimacy, and if not forgiveness then a clear head about the value of an asset despite personal feelings about said asset.""
 
-""I'll be fine,"" Gargoyle says, waving a hand dismissively. ""I must say though, I am touched that you're so concerned about my well-being.""","
-",,,,
+""I'll be fine,"" Gargoyle says, waving a hand dismissively. ""I must say though, I am touched that you're so concerned about my well-being.""","黑客弹了弹手指，""我: 十成十的渣滓。"" 
+
+另一根手指，""她: 守信，正当，和不宽恕时对资产价值准确定位的清醒头脑。""
+
+""我会没事的，"" Gargoyle 说道，无所谓地挥了挥手。""不过我必须说，你这么关心我让我很感动。""",,,,
 ,,,,,"
 ",,,,
 # Academician Alviss Sebestyen,,,,,"
@@ -281,9 +298,13 @@ AdjustRepActivePerson COOPERATIVE 10","The comms connect after a moment.
 
 ""Oh, hello, it's you!"" Your contact almost looks surprised that you're calling, but manages to launch into an upbeat introduction.
 
-""My name is $personName. The new provost - that is, Provost Baird - assigned me to be your liaison with the academy. I hope you're as excited to work with me as I am to be working with you!""","
-","0:aseb_niceToMeetYou:""Nice to meet you, Academician.""
-1:aseb_notSoNice:""Shall we get on with it?""",,,
+""My name is $personName. The new provost - that is, Provost Baird - assigned me to be your liaison with the academy. I hope you're as excited to work with me as I am to be working with you!""","过了一会通讯接通了。
+
+""哦，你好，是你!"" 你的联络人对你的通话非常惊喜，并进行了非常积极的介绍。
+
+""我是 $personName。 新院长，即 Baird 院长，指派我为你与学院的联络员。合作愉快！""","0:aseb_niceToMeetYou:""Nice to meet you, Academician.""
+1:aseb_notSoNice:""Shall we get on with it?""","0:aseb_niceToMeetYou:""很高兴见到你，学者。""
+1:aseb_notSoNice:""我们继续好吗？""",,
 asebRouteNotNice,DialogOptionSelected,$option == aseb_notSoNice,"$option = aseb_niceToMeetYou 0
 FireBest DialogOptionSelected",,"
 ",,,,
@@ -294,38 +315,38 @@ FireAll PopulateOptions","""Right, yes, um."" He seems nervous to be meeting a r
 
 ""At any time there may be various jobs open to you, you just have to check with me. Or sometimes there might be no jobs if they�re all fulfilled."" $HeOrShe reads something on a tablet, ""But um, it looks like Provost Baird wants you to have first priority for anything that come up. She must like you.""
 
-You're not so sure of this.","
-",,,,
+You're not so sure of this.","""当然，是的，嗯"" 见到一位活生生的太空舰长似乎让他有点紧张；你甚至有点好奇他是怎么得到这个职位的。 
+
+""... Galatia学院内部的各个部门告诉我他们需要做什么，然后我会配合您这样的自由职业者提供，呃，必要的服务。呃，并且我通过财务办公室达成任务。我们必须确保您能够拿到报酬，这非常重要。""
+
+""任何时候都可能有各种各样的工作对您开放，您只需要跟我核实一下。当然有时候可能它们都已经被完成。"" $HeOrShe 看着平板说道，""但是，额，看起来 Baird 院长希望您对任何事情都有优先权。她一定很欣赏您。""
+
+你不置可否。",,,,
 asebDefaultGreeting,PickGreeting,"$id == sebestyen score:1000
 $metAlready","ShowPersonVisual
-FireAll PopulateOptions","""Welcome back captain, it's good to see you!"" says $personName cheerfully.","
+FireAll PopulateOptions","""Welcome back captain, it's good to see you!"" says $personName cheerfully.","""欢迎回来，舰长！很高兴见到您！"" $personName 高兴地说道。",,,,
+asebOpenMHOptionText,UpdateMHOpenOptionText,$id == sebestyen score:1000,"SetOptionText mh_open ""询问可提供的任务""",,"
 ",,,,
-asebOpenMHOptionText,UpdateMHOpenOptionText,$id == sebestyen score:1000,"SetOptionText mh_open ""Inquire about available jobs""",,"
-",,,,
-asebMHOpenText,MHOpenText,$id == sebestyen score:1000,FireBest AsebPreMissionListText,"$HeOrShe taps at a datapad. ""Let me look at what we�ve got lined up for you today... ""","
-",,,,
+asebMHOpenText,MHOpenText,$id == sebestyen score:1000,FireBest AsebPreMissionListText,"$HeOrShe taps at a datapad. ""Let me look at what we�ve got lined up for you today... ""","$HeOrShe 轻敲数据板。""让我看看我们今天为您准备了什么任务... """,,,,
 asebNoMissions,AsebPreMissionListText,"$id == sebestyen score:1000
-$mh_count <= 0",,"""Oh, that's too bad. It looks like there aren�t any current requests,"" $heOrShe says. $HeOrShe sounds genuinely sorry for you, but manages to perk up, ""Maybe next time?""","
-",,,,
+$mh_count <= 0",,"""Oh, that's too bad. It looks like there aren�t any current requests,"" $heOrShe says. $HeOrShe sounds genuinely sorry for you, but manages to perk up, ""Maybe next time?""","""哦，真糟糕。当前似乎没有任何请求。"" $heOrShe 说道。$HeOrShe 听起来为此感到非常抱歉，但最终振作起来，""也许您改天再来?""",,,,
 asebOneMission,AsebPreMissionListText,"$id == sebestyen score:1000
 $mh_count == 1
-$mh_firstInlineBlurb != null",$mh_doNotPrintBlurbs = true 0,"""I have just the one request here. $mh_firstInlineBlurb"", $heOrShe looks to you expectantly, ""It's yours if you want it.""","
-",,,,
+$mh_firstInlineBlurb != null",$mh_doNotPrintBlurbs = true 0,"""I have just the one request here. $mh_firstInlineBlurb"", $heOrShe looks to you expectantly, ""It's yours if you want it.""","""我这只有一个任务。$mh_firstInlineBlurb"", $heOrShe 期待地看着你, ""如果您需要，它就是您的。""",,,,
 asebMultipleMissionsPre,AsebPreMissionListText,"$id == sebestyen score:1000
 $mh_count > 1",,,"
 ",,,,
 asebMultipleMissionsPost,MHPostMissionListText,"$id == sebestyen score:1000
-$mh_count > 1",,"""So those sound nice. Interested in anything?""","
-",,,,
+$mh_count > 1",,"""So those sound nice. Interested in anything?""","""这些看起来都不错，有什么感兴趣的吗？""",,,,
 asebAddMhubCloseOption,AddMHCloseOption,$id == sebestyen score:1000,"SetShortcut mh_close ""ESCAPE""",,"
-","1000:mh_close:""Not right now.""",,,
+","1000:mh_close:""Not right now.""","1000:mh_close:""现在不行。""",,
 asebAddMhubCloseOptionNothing,AddMHCloseOption,"$id == sebestyen score:1000
 $mh_count <= 0","SetShortcut mh_close ""ESCAPE""",,"
-","1000:mh_close:""Maybe next time.""",,,
+","1000:mh_close:""Maybe next time.""","1000:mh_close:""改天再来。""",,
 asebConvEnd,DialogOptionSelected,"$id == sebestyen score:1000
 $option == cutCommLink","ShowDefaultVisual
 EndConversation DO_NOT_FIRE
-FireAll PopulateOptions",You cut the comm link.,"
+FireAll PopulateOptions",You cut the comm link.,"你切断了通讯连接。
 ",,,,
 asebMissionDeclineGeneric,DialogOptionSelected,$option == aseb_decline,"unset $aseb_givePlayerNeutrinoDetector
 Call $mHub returnToList","He looks a bit crestfallen, but makes an effort to put on a smile. ""Do let me know if you change your mind!""
