@@ -357,8 +357,15 @@ OR
 OR
 ""Great! You can- "" he seems to realize that you declined the mission after a moment.
 
-""You don't want to do it? Oh. Okay. Well. Maybe,"" he taps his datapad on his desk, ""Maybe we can find something else for you?""","
-",,,,
+""You don't want to do it? Oh. Okay. Well. Maybe,"" he taps his datapad on his desk, ""Maybe we can find something else for you?""","他看上去有些沮丧，但仍努力挤出微笑。""如果您改变主意，一定要告诉我！""
+OR
+""哦，"" 他说道, 失望了一会儿。但他很快振作起来，""也许还有别的可能？""
+OR
+""嗯，当然。我完全了解。"" Sebestyen 飞快地扫描了他的数据板，""让我们看看还有什么... ""
+OR
+""可以的，您能做到—— "" 他似乎意识到你不久就取消了任务。
+
+""您不想做这个吗？噢。好吧。也许，"" 他点击了桌上的数据板，""也许我们能为您找到别的任务？""",,,,
 asebMissionAcceptGeneric,DialogOptionSelected,$option == aseb_accept,"unset $aseb_givePlayerNeutrinoDetector
 Call $mHub accept $missionId
 Call $mHub returnToList","""Great! Is there anything else I can do for you today?""
@@ -369,18 +376,26 @@ OR
 OR
 ""Always a pleasure to work with you, captain.""
 OR
-""Glad to hear it! Is there anything else you need?""","
+""Glad to hear it! Is there anything else you need?""","""好的！还有什么能为您效劳的吗？""
+OR
+""非常好！我会传达相关消息的。""
+OR
+""听起来不错。我会确保您有所需的一切。""
+OR
+""很高兴与您共事，舰长。""
+OR
+""乐意之至！您还需要其他的吗？""
 ",,,,
-asebMissionReturnGreeting,ASEBMissionReturn,!$aseb_printedFirstReturnGreeting,$aseb_printedFirstReturnGreeting = true 0,You open comms to Academician $personLastName.,"
-",,,,
+asebMissionReturnGreeting,ASEBMissionReturn,!$aseb_printedFirstReturnGreeting,$aseb_printedFirstReturnGreeting = true 0,You open comms to Academician $personLastName.,你打开了学者 $personLastName 的通讯链接。,,,,
 asebGivePlayerNDetectorOnAccept,DialogOptionSelected,"$option == aseb_accept
 !$player.ability:gravitic_scan
 $aseb_givePlayerNeutrinoDetector score:1000","Highlight ""Neutrino Detector""
 unset $aseb_givePlayerNeutrinoDetector
 AddAbility gravitic_scan","Sebestyen jumps as if he just realized something. ""Captain! You might, ah, I've been authorized to provide you with a Neutrino Detector for the mission. Um, a technical crew is transferring the necessary equipment to your flagship, and,"" he taps his datapad, ""I've sent your sensors officer the documentation.""
 
-""We've found the Neutrino Detector very helpful in pinpointing interesting, um, things while surveying distant systems. Power sources show up especially well, though sometimes you get a false signal. Oh, and one more thing! We haven't figured out a way to quite close the regenerative loop on the plasma reflector uh... and uh, just be sure to stock extra volatiles to keep the detector running.""","
-",aseb_accept:Continue,,,
+""We've found the Neutrino Detector very helpful in pinpointing interesting, um, things while surveying distant systems. Power sources show up especially well, though sometimes you get a false signal. Oh, and one more thing! We haven't figured out a way to quite close the regenerative loop on the plasma reflector uh... and uh, just be sure to stock extra volatiles to keep the detector running.""","Sebestyen 仿佛想到了某些事情般地跳了起来。 ""舰长！您也许，呃，我被授权为您提供一个中微子探测器。嗯，技术人员正在把必要的设备转移到您的旗舰上，并且，"" 他敲击着数据板，""我已经把文档发给了您的传感器操作员。""
+
+""我们发现中微子探测器在探测遥远星系时精确定位有趣的物品非常有用。能量源显示地特别好，尽管有时会收到错误信号。哦，还有件事！我们还没办法很好地闭合等离子反射器上的正反馈环路... 呃，需要确保储存额外的挥发物来保持探测器的运行。""",aseb_accept:Continue,aseb_accept:继续,,
 ,,,,,"
 ",,,,
 ,,,,,"
@@ -389,8 +404,7 @@ AddAbility gravitic_scan","Sebestyen jumps as if he just realized something. ""C
 ",,,,
 asebMissionReturnGreetingRepeat,ASEBMissionReturn,$aseb_printedFirstReturnGreeting,$aseb_printedFirstReturnGreeting = true 0,,"
 ",,,"needed so that ""FireBest ASEBMissionReturn"" always returns true, since it's called from conditions. The reason it's called from conditions is so it's executed before the text is printed.",
-genericContactMissionReturn1,GenericMissionReturn,!$contact_printedFirstReturnGreeting,$contact_printedFirstReturnGreeting = true 0,"After a short wait, your connection request is accepted.","
-",,,,
+genericContactMissionReturn1,GenericMissionReturn,!$contact_printedFirstReturnGreeting,$contact_printedFirstReturnGreeting = true 0,"After a short wait, your connection request is accepted.",短暂地等待之后，你的连接请求被接受了。,,,,
 genericContactMissionReturn2,GenericMissionReturn,$contact_printedFirstReturnGreeting,$contact_printedFirstReturnGreeting = true 0,,"
 ",,,,
 genericMissionReturnContinue,DialogOptionSelected,$option == contact_pickAnotherGreeting,FireBest PickGreeting,,"
@@ -406,9 +420,13 @@ BeginMission gaTTB","Academician Sebestyen taps at a datapad. ""Let me look at w
 
 ""It's, the, um, Provost Baird wants to speak with you,"" he says. He picks up the datapad again, examines it, and puts it down.
 
-""In person. Um. As soon as possible.""","
-","gaTTB_howAbout:""How about a mission?""
-cutCommLink:Leave",,,
+""In person. Um. As soon as possible.""","学者 Sebestyen 敲击了数据板。""让我看看今天为您准备了什么... 哦。"" 他放下数据板，困惑地看着你。
+
+""嗯，院长 Baird 想和您通话，"" 他说道。他拿起了数据板，再次确认了一下并放下。
+
+""当面。嗯。尽快。""","gaTTB_howAbout:""How about a mission?""
+cutCommLink:Leave","gaTTB_howAbout:""一个任务？""
+cutCommLink:离开",,
 asebAskedForWorkBairdTalk2,DialogOptionSelected,"$option == mh_open
 $id == sebestyen score:1000
 $global.asebSayBairdWantsToTalk score:1000
@@ -416,12 +434,17 @@ $gaTTB_askedAlready",$global.bairdWillTalk = true,"Academician Sebestyen taps at
 
 ""I'm sorry captain, you're blocked out of everything until you meet with Provost Baird. I'm, um. She can be... well, you should hear her out at least, right?""
 
-""Um."" He clears his throat. ""I guess that's everything for now?""","
-",cutCommLink:Leave,,,
+""Um."" He clears his throat. ""I guess that's everything for now?""","学者 Sebestyen 敲击着数据板。""让我看看—— 哦。"" 他放下了数据板。
+
+""很抱歉，舰长。在您见过院长 Baird 之前，您不能方位任何东西。我，嗯。她可能是... 您至少应该听听她把话说完，对吧?""
+
+""嗯。"" 他清了下喉咙。""我想现在就这些了?""",cutCommLink:Leave,cutCommLink:离开,,
 asebHowAboutAMission,DialogOptionSelected,$option == gaTTB_howAbout,,"""Oh no, that's quite impossible. I mean, she's ah- that is, I literally can't give you anything until the provost enables your contract code again."" Sebestyen holds up his datapad which practically glows with a string of bright DENIED codes. ""See?""
 
-""So. Um. A landing slot has been cleared for whenever you're ready.""","
-",cutCommLink:Leave,,,
+""So. Um. A landing slot has been cleared for whenever you're ready.""","""哦，不，那绝不可能。我的意思是，她是 呃—— 也就是说，在院长再次启用您的合同代码前，我不能提供任何东西。"" Sebestyen 举起数据板，上面确实闪烁着""拒绝""字样。""看到了吗?""
+
+""所以，嗯。着陆位已经清理完毕，等候您随时到来。""
+",cutCommLink:Leave,cutCommLink:离开,,
 ,,,,,"
 ",,,,
 # gaATG completed; no more missions from Alviss,,,,,"
@@ -432,61 +455,74 @@ $global.gaATG_missionCompleted score:2000",,"""Ah,"" says Sebestyen. You can tel
 
 ""It is good to see you. Um. It's always good to see you. The provost, however,"" he coughs again, then leans close. ""She's, um, put a... hold on your contract code."" He turns his datapad for you to see; it's lit up with bright DENIED alerts.
 
-""So."" He taps his fingers on the console. ""Everything is going well for you?""","
-",cutCommLink:Leave,,,
+""So."" He taps his fingers on the console. ""Everything is going well for you?""","""哦，"" Sebestyen 说到。你马上看出他有什么坏消息。""... $playerName 舰长，"" 他说到，然后咳嗽了一声。 
+
+""很高兴见到您。嗯。见到您总是很高兴。然而，院长，"" 他又咳嗽了一声，并靠得很。""她，呃... 锁定了您的合同代码。"" 他把数据板展示给你看; ""拒绝""字样的警告闪烁在屏幕上。
+
+""所以。"" 他在终端上敲击着手指。""您一切都还顺利吗？""",cutCommLink:Leave,cutCommLink:离开,,
 ,,,,,"
 ",,,,
 # GA Missions - Sebestyen,,,,,"
 ",,,,
 # Data retrieval from planetary ruins,,,,,"
 ",,,,
-gaDataBlurb,gaData_blurb,,,"""The $gaData_department department has turned up records of a data cache on $gaData_planetName in the $gaData_systemName system; they just need someone to go find it and transmit the contents back to the Academy.""","
-",,,,
+gaDataBlurb,gaData_blurb,,,"""The $gaData_department department has turned up records of a data cache on $gaData_planetName in the $gaData_systemName system; they just need someone to go find it and transmit the contents back to the Academy.""",""" $gaData_department 部门已经打开了 $gaData_systemName 星系的 $gaData_planetName 上的数据缓存记录; 他们只需要有人找到它并将内容传回Academy。""",,,,
 gaDataOfferOption,gaData_option,,,,"
-",gaData_start:Ask about data retrieval from the ruins on $gaData_planetName,,,
+",gaData_start:Ask about data retrieval from the ruins on $gaData_planetName,gaData_start:询问来自 $gaData_planetName 上废墟的数据检索相关信息,,
 gaDataMissionTextBasicOrPirates,DialogOptionSelected,"$option == gaData_start
 $gaData_variation == BASIC","$missionId = gaData
-SetTextHighlights $gaData_dist $gaData_reward","""So this is an easy one, right? All you have to do is get to $gaData_planetName, in the $gaData_systemName system, which is,"" $heOrShe checks a different datapad, ""about $gaData_dist light-years away. We'll provide the exact coordinates of the $gaData_target you need to, um, access. Then once you're back in hypercomm range, send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits.�","
-","aseb_accept:Accept
-aseb_decline:Decline",,,
+SetTextHighlights $gaData_dist $gaData_reward","""So this is an easy one, right? All you have to do is get to $gaData_planetName, in the $gaData_systemName system, which is,"" $heOrShe checks a different datapad, ""about $gaData_dist light-years away. We'll provide the exact coordinates of the $gaData_target you need to, um, access. Then once you're back in hypercomm range, send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits.�","""所以这很简单，对吗？您需要做的就是到达 $gaData_planetName，其位于 $gaData_systemName 星系，距离"" $heOrShe 检查着另一个数据板，""大概有 $gaData_dist 光年。 我们会提供您需要访问的 $gaData_target 的准确坐标。然后一旦您回到了超通讯的范围，把加密内容发回 Academy，财务办公室会支付您 $gaData_reward 星币。""","aseb_accept:Accept
+aseb_decline:Decline","aseb_accept:接受
+aseb_decline:拒绝",,
 gaDataMissionTextRemnants,DialogOptionSelected,"$option == gaData_start
 $gaData_variation == REMNANTS","$missionId = gaData
 SetTextHighlights $gaData_dist $gaData_reward","Academician $personLastName makes a series of small, odd noises as $heOrShe reads from $hisOrHer datapad. ""Ooh no. Oh. Hmm. Okay.""
 
-$HeOrShe turns to you, closes $hisOrHer eyes to brace for a moment, then puts on an impressive smile before proceeding. ""So this won't be a problem right? I mean, we have the exact coordinates of the $gaData_target for you. On $gaData_planetName, in the $gaData_systemName system, which is $gaData_dist light-years away. You get in, you get out, and once you're in hypercomm range, just send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits. No problem!""","
-","gaData_remCont:""But?""",,,
+$HeOrShe turns to you, closes $hisOrHer eyes to brace for a moment, then puts on an impressive smile before proceeding. ""So this won't be a problem right? I mean, we have the exact coordinates of the $gaData_target for you. On $gaData_planetName, in the $gaData_systemName system, which is $gaData_dist light-years away. You get in, you get out, and once you're in hypercomm range, just send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits. No problem!""","学者 $personLastName 在阅读$hisOrHer数据板时发出了一系列小而奇怪的噪音。""哦不。哦。嗯。好的。""
+
+$HeOrShe转向你，闭上$hisOrHer双眼振作了一会, 然后在继续之前露出令人印象深刻的微笑。""所以，这将不会是问题，对吗？我的意思是，我们会为您提供 $gaData_target 的准确坐标。它在 $gaData_planetName 上，位于 $gaData_systemName 星系，大概距离此处 $gaData_dist 光年。您进去，然后出来，一旦您在超通讯的范围内，把加密内容发回Academy，财务办公室会支付您 $gaData_reward 星币。没问题的！""","gaData_remCont:""But?""","gaData_remCont:""但是?""",,
 gaDataMissionTextRemnants2,DialogOptionSelected,$option == gaData_remCont,,"A longish pause, which is unusual for Academician $personLastName, who has a way of filling uncomfortable gaps in conversation.
 
-""But. We�re not supposed to talk about it. But. If you recall all those rumors around the First AI War... well, you can ask in the Persean Studies department maybe? But there is a, um, possibility, maybe, that you will encounter certain, um,"" $heOrShe looks down to check the exact phrasing, ""'autonomous weapon systems'. It says it might be quite dangerous, which is why this pays more than usual. I'm sure it's nothing, right? Ha-ha. You'll be fine?""","
-","aseb_accept:Accept
-aseb_decline:Decline",,,
+""But. We�re not supposed to talk about it. But. If you recall all those rumors around the First AI War... well, you can ask in the Persean Studies department maybe? But there is a, um, possibility, maybe, that you will encounter certain, um,"" $heOrShe looks down to check the exact phrasing, ""'autonomous weapon systems'. It says it might be quite dangerous, which is why this pays more than usual. I'm sure it's nothing, right? Ha-ha. You'll be fine?""","学者 $personLastName 出现了一段不同寻常的长时间停顿。他本可以填补这些谈话中令人不安的空白。
+
+""但是，我们不应该讨论它。但是，如果你还记得关于第一次AI战争的所有谣言... 嗯，也许您可以在 Persean 研究部问问？但是有一个，嗯，可能，您会遇到一些，嗯，"" $heOrShe 向下看以检查准确的措辞，""'自主武器系统'。据说它们可能相当危险。这就是为什么奖励更高的原因。我确信那不会有什么影响，对吗? 哈哈，你觉得还好，对吧？""","aseb_accept:Accept
+aseb_decline:Decline","aseb_accept:接受
+aseb_decline:拒绝",,
 gaDataMissionTextDeciv,DialogOptionSelected,"$option == gaData_start
 $gaData_variation == DECIV","$missionId = gaData
 SetTextHighlights $gaData_dist $gaData_marinesReq $gaData_reward","""Right. Uh. So once you get to $gaData_planetName in the $gaData_systemName system, about $gaData_dist light-years away, you�ll go to the exact coordinates of the $gaData_target. That's where things might be a little, um, complicated.""
 
 $HeOrShe pauses and you watch the process of $himOrHer considering how to phrase $hisOrHer next words. ""There are reports of ah, a 'decivilized' population. Probably? They don't have weapons that can take on a spaceship but it says here they have,"" $heOrShe taps at another datapad, ""a lot of handheld weapons. And they're ... fairly hostile. Usually. So, you should definitely bring,"" yet another datapad, ""around $gaData_marinesReq or so marines. Just in case. I mean, hopefully no one gets shot right? Statistically speaking, um. The data suggests that only low casualties are a possibility?""
 
-$HeOrShe looks a little ill at the thought, but recovers quickly, ""Once you�re back in hypercomms range, just send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits. Easy!""","
+$HeOrShe looks a little ill at the thought, but recovers quickly, ""Once you�re back in hypercomms range, just send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits. Easy!""","""对的。嗯。所以一旦您到达了位于 $gaData_systemName 星系的 $gaData_planetName ，距离大概 $gaData_dist 光年，您需要前往 $gaData_target 的准确坐标。这可能会稍微有点，呃，复杂。""
+
+$HeOrShe停了下来，你看着$himOrHer在考虑$hisOrHer下句话的措辞。""有一些关于，呃，一个'非文明'族群的报告。 可能？他们没有在飞船上搭载的武器，但据说他们"" $heOrShe敲击另一个数据板，""有很多手持武器。并且他们...相当有敌意。一般是这样。所以，您一定要带着，"" 又一个数据板，""大约 $gaData_marinesReq 或更多的陆战队队员。以防万一。我的意思是，希望没人会被射击，对吧? 根据统计数据，嗯。数据显示可能会有一些伤亡？""
+
+$HeOrShe想到这个就有点不舒服，但是很快恢复过来，""一旦您回到超通讯的范围，把加密数据发回Academy，财务办公室会支付 $gaData_reward 星币。很简单！""
 ","aseb_accept:Accept
-aseb_decline:Decline",,,
+aseb_decline:Decline","aseb_accept:接受
+aseb_decline:拒绝",,
 gaDataMissionTextPulsar,DialogOptionSelected,"$option == gaData_start
 $gaData_variation == PULSAR","$missionId = gaData
 SetTextHighlights $gaData_dist $gaData_reward","""Yes, so you�ll need to go to $gaData_planetName in the $gaData_systemName system, which is $gaData_dist light-years away. We�ll provide the exact coordinates of the $gaData_target you need to, um, access. And oh, oh, this is really important,"" $heOrShe taps a key, switching the display to a stellar diagram that appears to be exploding in two arcs on opposite poles.
 
 Academician $personLastName explains, ""$gaData_pulsarName is a pulsar, so you�ll have to be very, very careful. I�m so jealous! Rapidly spinning jets of high energy charged particles, oh, it�s a once-in-a-lifetime sight. I mean, that�s what I hear from the Astrometrics people,"" $heOrShe sighs. ""So, um, hopefully your shields are up to spec?""
 
-$HeOrShe continues, ""Once you�re back in hypercomms range, send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits.""","
-","aseb_accept:Accept
-aseb_decline:Decline",,,
+$HeOrShe continues, ""Once you�re back in hypercomms range, send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits.""","""是的，所以你需要前往位于 $gaData_systemName 星系的 $gaData_planetName ，距离约 $gaData_dist 光年。我们会提供您需要访问的 $gaData_target 的准确坐标。并且，哦，哦，有一个重要的点。"" $heOrShe敲击了一个按键，将显示切换到了星图。该星图显示在相反的两极的两条弧线上发生着爆炸。
+
+学者 $personLastName 解释道，""$gaData_pulsarName 是一颗脉冲星，所以您必须非常非常小心。我非常羡慕！高速旋转的高能带电粒子喷流，哦，真是一生难得一见的景象。我的意思是，这是我从天文学家那里听说的，"" $heOrShe叹息道。""所以，嗯，希望您的护盾能符合规格？""
+
+$HeOrShe接着道，""一旦您回到超通讯的范围，把加密数据发回Academy，财务办公室会支付 $gaData_reward 星币。""","aseb_accept:Accept
+aseb_decline:Decline","aseb_accept:接受
+aseb_decline:拒绝",,
 gaDataPlanetInteraction,OpenInteractionDialog,"$gaData_targetPlanet score:1000
 Call $global.gaData_ref updateData","ShowDefaultVisual
 FireBest GADataPlanetInteraction",,"
 ",,,,
 gaDataPrintHostilesText,GADataAdjustOptions,HostileFleetNearbyAndAware,"SetEnabled mktRaidNonMarket false
-SetEnabled gaData_get false","A nearby hostile fleet is tracking your movements, making a ground operation impossible.","
-",,,,
+SetEnabled gaData_get false","A nearby hostile fleet is tracking your movements, making a ground operation impossible.",附近的敌对舰队正在跟踪你的行动，使地面行动无法进行。,,,,
 gaDataNotEnoughSuppliesForDistraction,GADataAdjustOptions,$player.supplies < 10,"SetEnabled gaData_getAvoidCombat false
-SetTooltip gaData_getAvoidCombat ""Requires 10 supplies. You have $player.supplies supplies.""
+SetTooltip gaData_getAvoidCombat ""需要 10 补给。你拥有 $player.supplies 补给。""
 SetTooltipHighlights gaData_getAvoidCombat 10 $player.supplies
 SetTooltipHighlightColors gaData_getAvoidCombat highlight bad",,"
 ",,,,
