@@ -468,7 +468,7 @@ $global.gaATG_missionCompleted score:2000",,"""Ah,"" says Sebestyen. You can tel
 ",,,,
 gaDataBlurb,gaData_blurb,,,"""The $gaData_department department has turned up records of a data cache on $gaData_planetName in the $gaData_systemName system; they just need someone to go find it and transmit the contents back to the Academy.""",""" $gaData_department 部门已经打开了 $gaData_systemName 星系的 $gaData_planetName 上的数据缓存记录; 他们只需要有人找到它并将内容传回Academy。""",,,,
 gaDataOfferOption,gaData_option,,,,"
-",gaData_start:Ask about data retrieval from the ruins on $gaData_planetName,gaData_start:询问来自 $gaData_planetName 上废墟的数据检索相关信息,,
+",gaData_start:Ask about data retrieval from the ruins on $gaData_planetName,gaData_start:询问来自 $gaData_planetName 上残骸的数据检索相关信息,,
 gaDataMissionTextBasicOrPirates,DialogOptionSelected,"$option == gaData_start
 $gaData_variation == BASIC","$missionId = gaData
 SetTextHighlights $gaData_dist $gaData_reward","""So this is an easy one, right? All you have to do is get to $gaData_planetName, in the $gaData_systemName system, which is,"" $heOrShe checks a different datapad, ""about $gaData_dist light-years away. We'll provide the exact coordinates of the $gaData_target you need to, um, access. Then once you're back in hypercomm range, send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits.�","""所以这很简单，对吗？您需要做的就是到达 $gaData_planetName，其位于 $gaData_systemName 星系，距离"" $heOrShe 检查着另一个数据板，""大概有 $gaData_dist 光年。 我们会提供您需要访问的 $gaData_target 的准确坐标。然后一旦您回到了超通讯的范围，把加密内容发回 Academy，财务办公室会支付您 $gaData_reward 星币。""","aseb_accept:Accept
@@ -527,73 +527,83 @@ SetTooltipHighlights gaData_getAvoidCombat 10 $player.supplies
 SetTooltipHighlightColors gaData_getAvoidCombat highlight bad",,"
 ",,,,
 gaDataStandardPlanetInteraction,GADataPlanetInteraction,,"SetShortcut defaultLeave ""ESCAPE""
-FireBest GADataAdjustOptions",A scan of the coordinates provided by Academician Sebestyen shows the location is long deserted. Your sensors officer tentatively identifies the $gaData_target on the readout. It appears to be in relatively good shape.,"
+FireBest GADataAdjustOptions",A scan of the coordinates provided by Academician Sebestyen shows the location is long deserted. Your sensors officer tentatively identifies the $gaData_target on the readout. It appears to be in relatively good shape.,"学者Sebestyen提供的坐标扫描显示，该地点早已无人居住。你的传感器操作员初步确认了数据显示上的 $gaData_target 。它看起来状态相对良好。
 ","gaData_get:Send a team down to retrieve the data
-defaultLeave:Leave",,,
+defaultLeave:Leave","gaData_get:派出小组接收数据
+defaultLeave:离开",,
 gaDataDecivInteractionRaid,GADataPlanetInteraction,$gaData_variation == DECIV score:1000,FireBest GADataRaidBegin,"A scan of the coordinates provided by Academician Sebestyen shows signs of human presence. There's evidence of recent handheld weapons fire and the use of small-scale explosives, though thankfully it appears the $gaData_target has escaped any serious damage.
 
-Still, it looks like recovering the data will require some shooting.","
-",,,,
+Still, it looks like recovering the data will require some shooting.","学者Sebestyen提供的坐标扫描显示，该地存在人类活动的迹象。该处存在手持武器射击和使用小规模爆炸物的迹象。令人欣慰的是，$gaData_target 似乎没有任何严重损坏。
+
+不过，恢复数据可能需要一些战斗。",,,,
 gaDataDecivInteractionRaidOptions,GADataRaidBegin,,"ShowDefaultVisual
 $raidDifficulty = $gaData_raidDifficulty
 $raidGoBackTrigger = GADataRaidBegin
-AddRaidObjective gaData ""Retrieve the data from the $gaData_target"" LOW 5000 GADataRaidFinished
+AddRaidObjective gaData ""从 $gaData_target 中获得数据"" LOW 5000 GADataRaidFinished
 SetShortcut defaultLeave ""ESCAPE""
-SetStoryOption gaData_getAvoidCombat 1 gaData_avoidCombat general ""Created a distraction to retrieve data for the Galatia Academy without bloodshed""
+SetStoryOption gaData_getAvoidCombat 1 gaData_avoidCombat general ""通过分散敌方注意力，以不流血的方式为Galatia学院获取数据""
 FireAll GADataAdjustOptions",,"
 ","mktRaidNonMarket:Consider a ground operation to retrieve the data
 gaData_getAvoidCombat:Drop 10 units of supplies at a nearby location to distract the locals
-defaultLeave:Leave",,,
+defaultLeave:Leave","mktRaidNonMarket:考虑地面作战来获取数据
+gaData_getAvoidCombat:在附近投下10单位补给，来分散当地人的注意力
+defaultLeave:离开",,
 gaDataFinishedRaid,GADataRaidFinished,,"$global.gaData_gotData = true
-Call $global.gaData_ref updateStage",Your marines provide security while a small salvage team accesses the $gaData_target and extracts the specified data cores.,"
-",,,,
+Call $global.gaData_ref updateStage",Your marines provide security while a small salvage team accesses the $gaData_target and extracts the specified data cores.,在你的陆战队保护下，小型打捞小组访问了 $gaData_target ，并提取了特定的几个数据核心。,,,,
 gaDataPlanetGetData,DialogOptionSelected,$option == gaData_get,"$global.gaData_gotData = true
 Call $global.gaData_ref updateStage
-FireAll PopulateOptions",You send down a small salvage team. They access the $gaData_target and extract the specified data cores without undue difficulty.,"
-",,,,
+FireAll PopulateOptions",You send down a small salvage team. They access the $gaData_target and extract the specified data cores without undue difficulty.,你派遣了小型打捞小组。他们顺利地访问了 $gaData_target ，并提取了特定的几个数据核心。,,,,
 gaDataPlanetGetDataDistraction,DialogOptionSelected,$option == gaData_getAvoidCombat,"AddRemoveCommodity supplies -10
 $global.gaData_gotData = true
 Call $global.gaData_ref updateStage
 FireAll PopulateOptions","You order some cargo crates loaded with supplies and just enough solid-prop boosters to survive a landing. Once these are deployed and attracting a suitable amount of attention, a small salvage team accesses the $gaData_target and extracts the specified data cores.
 
-The team has to leave quickly, but fortunately - aside from a few small-arms burns on the extraction shuttle - there's no harm done.","
-",,,,
+The team has to leave quickly, but fortunately - aside from a few small-arms burns on the extraction shuttle - there's no harm done.","你调来了装着补给的货箱以及用于着陆的固体推进器。在补给着陆并吸引了足够的注意力之后，小型打捞小组访问了 $gaData_target 并提取了特定的几个数据核心。
+
+小组不得不迅速离开，但万幸提取穿梭机上除了有少量小型武器弹痕外，没有任何损伤。",,,,
 # pirate fleet interactions,,,,,"
 ",,,,
 gaDataPirateFleetEncounter,BeginFleetEncounter,"$gaData_pirate score:1000
 !$ignorePlayerCommRequests","$gaData_pirateConv = true 0
 FleetDesc
-AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
+AddText ""$faction $otherShipOrFleet 向你打招呼。"" $faction.baseColor
 $hailing = true 0",,"
 ",,,,
 gaDataPirateOpenComm,OpenCommLink,"$entity.gaData_pirateConv score:100
 Call $global.gaData_ref updateData","$entity.ignorePlayerCommRequests = true
 MakeOtherFleetImportant gaData false
-FireBest GADataPirateConvStart","""Eyh there cap'n. Good work finding the target! We all admire your cleverness,"" $heOrShe turns over $hisOrHer shoulder to address $hisOrHer crew, ""Don�t we, ya vac-hogs?""
+FireBest GADataPirateConvStart","""噢，船长~ 能找到目标非常不错！我们所有人都钦佩您的才智，"" $heOrShe转过$hisOrHer肩膀向$hisOrHer员工致辞, ""Don�t we, ya vac-hogs?""
 
-You hear, quietly, the pirate bridge crew giving a round of ""Aye!""s amid hooting and applause.","
-",,,,
-gaDataPirateConvBeforeGotData,GADataPirateConvStart,!$global.gaData_gotData,"$transmitNoun = ""these coordinates"" 0
-SetStoryOption gaData_bluff 1 gaData_bluff general ""Bluffed pirates into giving you supplies and fuel""","The pirate leader turns back to the display. ""Now if you don't mind, we'll be takin' those coordinates from you and doing some of the good, honest work that the rich-man is paying us for.""","
-","gaData_transmitCoords:Transmit the coordinates and let the pirates take the data
+You hear, quietly, the pirate bridge crew giving a round of ""Aye!""s amid hooting and applause.","""噢，船长~ 能找到目标非常不错！我们所有人都钦佩你的才智，"" $heOrShe转过$hisOrHer肩膀向$hisOrHer员工致辞, ""我们同样如此，不是吗？真空猪们！""
+
+你安静地听着，海盗船舰桥船员们发出了""Aye！""的欢呼和掌声。",,,,
+gaDataPirateConvBeforeGotData,GADataPirateConvStart,!$global.gaData_gotData,"$transmitNoun = ""这些坐标"" 0
+SetStoryOption gaData_bluff 1 gaData_bluff general ""威胁海盗提供燃料和补给""","The pirate leader turns back to the display. ""Now if you don't mind, we'll be takin' those coordinates from you and doing some of the good, honest work that the rich-man is paying us for.""","海盗领袖转身面向显示器。""现在，如果你不介意，我们将从你这拿走这些坐标，去做一些某个有钱人乐于付钱的良好、诚实的工作。""","gaData_transmitCoords:Transmit the coordinates and let the pirates take the data
 gaData_sellCoords:Offer to transmit the coordinates ... for a price
 gaData_rejectOffer:Decline this invitation; power up combat systems
-gaData_bluff:""The deal has changed. You're here to provide me with fuel and supplies.""",,,
-gaDataPirateConvAfterGotData,GADataPirateConvStart,$global.gaData_gotData,"$transmitNoun = ""this data"" 0
-SetStoryOption gaData_bluff 1 gaData_bluff general ""Bluffed pirates into giving you supplies and fuel""","The pirate leader turns back to the display. ""Now if you don�t mind, we'll be takin' a copy of that data from you back to the rich-man who's paying us. Transmit now, if you'd be so kind. Or do we gotta come over and cut the memory core from that fancy flagship you're flying?""","
-","gaData_transmitData:Transmit the data; it's just a copy
+gaData_bluff:""The deal has changed. You're here to provide me with fuel and supplies.""","gaData_transmitCoords:传输坐标，让海盗获取书
+gaData_sellCoords:可以传输坐标...只要价格合适
+gaData_rejectOffer:拒绝提议; 开启武器系统
+gaData_bluff:""交易已经变了。你们是来给我提供燃料和补给的。""",,
+gaDataPirateConvAfterGotData,GADataPirateConvStart,$global.gaData_gotData,"$transmitNoun = ""这些数据"" 0
+SetStoryOption gaData_bluff 1 gaData_bluff general ""威胁海盗提供燃料和补给""","The pirate leader turns back to the display. ""Now if you don�t mind, we'll be takin' a copy of that data from you back to the rich-man who's paying us. Transmit now, if you'd be so kind. Or do we gotta come over and cut the memory core from that fancy flagship you're flying?""","海盗领袖转身面向显示器。""现在，如果你不介意，我们将从你这拷贝数据发给付钱给我们的某位有钱人。如果你还识相，立即传送过来。或者我们过来并把记忆核心从你的漂亮旗舰上切下来?""","gaData_transmitData:Transmit the data; it's just a copy
 gaData_sellData:Offer to transmit a copy of the data ... for a price
 gaData_rejectOffer:Decline this invitation; power up combat systems
-gaData_bluff:""The deal has changed. You�re here to provide me with fuel and supplies.""",,,
+gaData_bluff:""The deal has changed. You�re here to provide me with fuel and supplies.""","gaData_transmitData:传输数据; 只是个拷贝
+gaData_sellData:可以传输数据... 只要价格合适
+gaData_rejectOffer:拒绝提议; 开启武器系统
+gaData_bluff:""交易已经变了。你们是来给我提供燃料和补给的。""",,
 gaDataGiveCoordsSel,DialogOptionSelected,$option == gaData_transmitCoords,"$global.gaData_gaveCoordsToPirates = true
 Call $global.gaData_ref updateStage
 MakeOtherFleetNonHostile gaData true
-MakeOtherFleetDoThing $gaData_planetId 2 ""retrieving data from the ruins"" true
+MakeOtherFleetDoThing $gaData_planetId 2 ""从残骸中获取数据"" true
 MakeOtherFleetGoAway false","You signal your comms officer to transmit the coordinates. Some cache of data of interest to a bunch of academics isn�t worth this trouble.
 
-""Transmission received, captain,"" says the pirate with a smile. ""It�s been a...""","
-","cutCommLink:Close transmission
-gaDataCutCommAngry:Hit the end transmission button somewhat harder than strictly necessary",,,
+""Transmission received, captain,"" says the pirate with a smile. ""It�s been a...""","你指示你的通讯官传送这些坐标。一群学者感兴趣的一些数据缓存不值得这么麻烦。
+
+""传书已接收，舰长，""  海盗微笑着说。 ""乐意之...""","cutCommLink:Close transmission
+gaDataCutCommAngry:Hit the end transmission button somewhat harder than strictly necessary","cutCommLink:关闭传输
+gaDataCutCommAngry:气愤地按下结束传输按钮",,
 gaDataGiveCoordsSelAngry,DialogOptionSelected,$option == gaDataCutCommAngry,"$option = cutCommLink 0
 FireBest DialogOptionSelected",,"
 ",,,,
@@ -602,40 +612,48 @@ MakeOtherFleetGoAway true","You signal your comms officer to transmit a copy of 
 
 ""Transmission received, captain,"" says the pirate with a smile. ""It�s been a pleasure...""
 
-You hit the end transmission button a little harder than necessary before the pirate finishes speaking.","
-",cutCommLink:Continue,,,
+You hit the end transmission button a little harder than necessary before the pirate finishes speaking.","你指示你的通讯官传输一份数据拷贝。Galatia学院并没有明确要求数据保密，对吧? 只要能让这些海盗远离你，以便顺利完成任务，完全不会有损失。
+
+""传输已接收，舰长，"" 海盗微笑着说。""乐意之...""
+
+你在海盗的话说完之前，气氛地按下结束按钮。
+",cutCommLink:Continue,cutCommLink:继续,,
 gaDataGiveDataNegotiate1,DialogOptionSelected,$option == gaData_sellData,"$option = gaData_sellCoords 0
 FireBest DialogOptionSelected",,"
 ",,,,
 gaDataGiveDataNegotiate2,DialogOptionSelected,$option == gaData_sellCoords,SetTextHighlights $gaData_piratePayment,"You explain to the pirate captain that some compensation is required. After all, you travelled all the way out here to provide them with $transmitNoun - good, honest work. $HeOrShe is obviously a practical $manOrWoman of business who knows how to negotiate a beneficial deal for all involved.
 
-After some back and forth, threats and flattery, and not a few lies and boasts, the pirate captain proposes a 'fair compensation' of $gaData_piratePayment credits.","
+After some back and forth, threats and flattery, and not a few lies and boasts, the pirate captain proposes a 'fair compensation' of $gaData_piratePayment credits.","你想海盗舰长解释说需要一些补偿。毕竟，你远道而来为他们提供了 $transmitNoun - 良好、诚实的工作。$HeOrShe明显是个现实的从商$manOrWoman，知道如何让各方都获益。
+
+经过反复地威胁和奉承，再加上不少谎言和吹嘘，海盗船长给出了 $gaData_piratePayment 星币的'公平补偿'。
 ","gaData_acceptOffer:Accept
-gaData_rejectOffer:Decline, power up weapons",,,
+gaData_rejectOffer:Decline, power up weapons","gaData_acceptOffer:接受
+gaData_rejectOffer:拒绝，启用武器",,
 gaDataGiveDataNegotiateAcceptData,DialogOptionSelected,"$option == gaData_acceptOffer
 $global.gaData_gotData","AddCredits $gaData_piratePayment
 MakeOtherFleetNonHostile gaData true
 MakeOtherFleetGoAway true
 EndConversation
-ShowDefaultVisual","You cut the transmission, having betrayed the spirit of your agreement with the Academy. You consider whether or not to ignore the sinking feeling of guilt that's set up home in your stomach. Still, they'll be none the wiser, and you've got extra credits in your account.","
+ShowDefaultVisual","You cut the transmission, having betrayed the spirit of your agreement with the Academy. You consider whether or not to ignore the sinking feeling of guilt that's set up home in your stomach. Still, they'll be none the wiser, and you've got extra credits in your account.","你切断了传输。这次传输已经违反了与学院的协议精神。你在考虑是否忽略已经在胃里安家的负罪感。是的，他们再聪明也不会知道，你的账户里有了额外的星币。
 ",,,,
 gaDataGiveDataNegotiateAcceptCoords,DialogOptionSelected,"$option == gaData_acceptOffer
 !$global.gaData_gotData","AddCredits $gaData_piratePayment
 $global.gaData_gaveCoordsToPirates = true
 Call $global.gaData_ref updateStage
 MakeOtherFleetNonHostile gaData true
-MakeOtherFleetDoThing $gaData_planetId 2 ""retrieving data from the ruins"" true
+MakeOtherFleetDoThing $gaData_planetId 2 ""从残骸获取数据"" true
 MakeOtherFleetGoAway false
 EndConversation
-ShowDefaultVisual","You cut the transmission, relieved at being able to salvage something out of the situation. Those academics should have warned you there was likely to be competition!","
-",,,,
+ShowDefaultVisual","You cut the transmission, relieved at being able to salvage something out of the situation. Those academics should have warned you there was likely to be competition!",你切断了传输，庆幸在这种情况下依然打捞了一些东西。那些学者本应警告你可能存在竞争的！,,,,
 gaDataDeclinePirateOffer,DialogOptionSelected,$option == gaData_rejectOffer,"EndConversation
-ShowDefaultVisual",You cut the transmission and order the bridge crew to prepare for an engagement. Your tactical officer reports the pirate ships are accelerating to attack speed.,"
+ShowDefaultVisual",You cut the transmission and order the bridge crew to prepare for an engagement. Your tactical officer reports the pirate ships are accelerating to attack speed.,"你切断了传输，并命令舰桥船员准备战斗。你的战术官报告海盗舰队正加速到攻击航速。
 ",,,,
 gaDataBluff,DialogOptionSelected,$option == gaData_bluff,,"You sigh impatiently and, with seeming embarrassment for the pirate captain's error, you say ""You weren't informed of the change in plans, were you.""
 
-You explain that they were intended all along as a support force- more of a supply convoy, really- for your fleet which was to carry out the actual mission. It was all quite clear when you were meeting with the Tri-Tachyon executive in charge of the operation. There must have been some kind of slip-up in communication.","
-",gaData_bluff1:Continue,,,
+You explain that they were intended all along as a support force- more of a supply convoy, really- for your fleet which was to carry out the actual mission. It was all quite clear when you were meeting with the Tri-Tachyon executive in charge of the operation. There must have been some kind of slip-up in communication.","你不耐烦地叹了口气，似乎对海盗舰长的错误感到尴尬。你说道，""你没有被告知计划变动，对吧。""
+
+你解释道，他们实际上作为一支支援部队——实际上更像一支补给舰队——为你的舰队执行实际任务。你在与负责这次行动的速子执行官会面时讲的很清楚。交流中一定出了什么差错。
+",gaData_bluff1:Continue,gaData_bluff1:继续,,
 gaDataBluff1,DialogOptionSelected,$option == gaData_bluff1,"AddRemoveCommodity supplies 100
 AddRemoveCommodity fuel 200
 MakeOtherFleetNonHostile gaData true
@@ -643,16 +661,19 @@ MakeOtherFleetGoAway true","The pirate captain stumbles on $hisOrHer words, conf
 
 You stick to your story, creating believable details on the fly, and manage to take $himOrHer in completely.
 
-""I, yes, ... you!,"" the pirate captain gestures angrily at some underling, ""Get the fuel and supplies transferred NOW."" $HeOrShe turns back to the display, sulking ""Please, just don�t tell the boss about this.""","
-","cutCommLink:""I won't, I promise.""",,,
+""I, yes, ... you!,"" the pirate captain gestures angrily at some underling, ""Get the fuel and supplies transferred NOW."" $HeOrShe turns back to the display, sulking ""Please, just don�t tell the boss about this.""","海盗舰长无意中听到了$hisOrHer谈话，被你虚张声势的自信弄糊涂了。你提醒$himOrHer，速子科技会为完成工作的人支付丰厚的奖金，同时他们也会对那些违反合同并危及重要投资的人采取相当极端的惩罚措施。
+
+你坚持自己的说法，并不断完善细节，设法让$himOrHer完全相信。
+
+""我，是的，...你！，"" 海盗舰长愤怒地向下属打手势，""立即！把燃料和补给转移过来。"" $HeOrShe转向显示器，愠怒道 ""希望您别把这事告诉老板。""
+","cutCommLink:""I won't, I promise.""","cutCommLink:""我不会的，我发誓。""",,
 ,,,,,"
 ",,,,
 # retrieve artifact from derelict mission,,,,,"
 ",,,,
-gaDABlurb,gaDA_blurb,,,"""The $gaDA_department department has requested retrieval of an object of scientific interest from a derelict ship near $gaDA_starName.""","
-",,,,
+gaDABlurb,gaDA_blurb,,,"""The $gaDA_department department has requested retrieval of an object of scientific interest from a derelict ship near $gaDA_starName.""","""$gaDA_department 部门请求从临近 $gaDA_starName 的遗弃船只上取回有科学价值的物品。""",,,,
 gaDAOfferOption,gaDA_option,,,,"
-",gaDA_start:Ask about the scientific object retrieval mission,,,
+",gaDA_start:Ask about the scientific object retrieval mission,gaDA_start:询问带回科学价值物品任务的细节,,
 gaDAMissionTextBasic,DialogOptionSelected,"$option == gaDA_start
 $gaDA_notRemnants","$missionId = gaDA
 SetTextHighlights $gaDA_dist $gaDA_reward
