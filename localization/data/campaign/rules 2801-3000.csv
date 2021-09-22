@@ -679,19 +679,24 @@ $gaDA_notRemnants","$missionId = gaDA
 SetTextHighlights $gaDA_dist $gaDA_reward
 $aseb_givePlayerNeutrinoDetector = true 0","""So the $gaDA_department department needs you to pop on over to the $gaDA_systemName, that�s $gaDA_dist light-years away, to retrieve, um,"" $heOrShe squints at a datapad, ""'$gaDA_widget' from a derelict. I guess it�s in the ship? Or maybe the cargo? It says here they have a pretty good idea of exactly where it is in the hull volume, anyway. This should be simple, right?""
 
-$HeOrShe pauses briefly. ""Oh, right, the payment! Once you return the $gaDA_widgetNoArticle to the Academy, the finance office will pay you $gaDA_reward credits.""","
+$HeOrShe pauses briefly. ""Oh, right, the payment! Once you return the $gaDA_widgetNoArticle to the Academy, the finance office will pay you $gaDA_reward credits.""","""所以 $gaDA_department 需要您出现在 $gaDA_systemName，距离此处 $gaDA_dist 光年，以获取，呃，"" $heOrShe斜视着数据板，""残骸中的'$gaDA_widget'。我猜它在一艘飞船里? 或者在货箱里? 反正，据说他们非常清楚它在船体中的确切位置。那应该很简单，对吧?""
+
+$HeOrShe稍微停顿了一下。""噢，对，还有报酬! 一旦您将 $gaDA_widgetNoArticle 带回学院，财务办公室会支付您 $gaDA_reward 星币。""
 ","aseb_accept:Accept
-aseb_decline:Decline",,,
+aseb_decline:Decline","aseb_accept:接受
+aseb_decline:拒绝",,
 gaDAMissionTextRemnants,DialogOptionSelected,"$option == gaDA_start
 !$gaDA_notRemnants","$missionId = gaDA
 SetTextHighlights $gaDA_dist $gaDA_fuel","Academician Sebestyen's eyes go wide as $heOrShe reads over the datapad, then $heOrShe quickly looks back to you. 
 
-He or she puts on a bright smile. ""This will be simple, they know exactly where to find the, um,"" $heOrShe looks back to the datapad, brow creased, ""'$gaDA_widgetNoArticle' in the target�s hull. Just send a salvage crew, get the thing, and off you go! And that�s in the $gaDA_systemName, just $gaDA_dist light-years, there and back with,� a few taps on a different datapad, ""around $gaDA_fuel units of fuel for your fleet."" The academician shifts uncomfortably, as if $heOrShe doesn�t want to deliver bad news.","
-","gaDA_and:""And?""",,,
+He or she puts on a bright smile. ""This will be simple, they know exactly where to find the, um,"" $heOrShe looks back to the datapad, brow creased, ""'$gaDA_widgetNoArticle' in the target�s hull. Just send a salvage crew, get the thing, and off you go! And that�s in the $gaDA_systemName, just $gaDA_dist light-years, there and back with,� a few taps on a different datapad, ""around $gaDA_fuel units of fuel for your fleet."" The academician shifts uncomfortably, as if $heOrShe doesn�t want to deliver bad news.","学者Sebestyen在$heOrShe阅读数据板时目光还留意着四周，然后$heOrShe快速地看向你。 
+
+他或她露出了灿烂的笑容。""这会很简单，他们知道具体哪里可以找到，呃，"" $heOrShe看了眼数据板，皱眉道，""目标舰船中的'$gaDA_widgetNoArticle'。只需要派遣打捞小组，拿到东西，然后离开! 目标在 $gaDA_systemName, 仅仅 $gaDA_dist 光年远，您的舰队往返需要，"" 在另一个数据板上轻敲几下，""大概 $gaDA_fuel 单位的燃料。"" 这位学者不舒服地晃动了一下，好像$heOrShe不想传递坏消息。","gaDA_and:""And?""","gaDA_and:""然后呢?""",,
 gaDAMissionTextRemnants2,DialogOptionSelected,$option == gaDA_and,"SetTextHighlights $gaDA_reward
-$aseb_givePlayerNeutrinoDetector = true 0","""And. Well, the last expedition they sent. Um. The last transmission said something about 'hostile AI warships'. Maybe."" $HeOrShe drops $hisOrHer voice, ""We're not supposed to talk about it. Officially, I mean. But it could be ... maybe dangerous? That�s why this one pays more than usual - $gaDA_reward credits. You can handle it, right?"" Academician $personLastName resumes $hisOrHer previous volume ""- And everything will be fine! Just get in, retrieve the object, and return it to the Academy.""","
+$aseb_givePlayerNeutrinoDetector = true 0","""And. Well, the last expedition they sent. Um. The last transmission said something about 'hostile AI warships'. Maybe."" $HeOrShe drops $hisOrHer voice, ""We're not supposed to talk about it. Officially, I mean. But it could be ... maybe dangerous? That�s why this one pays more than usual - $gaDA_reward credits. You can handle it, right?"" Academician $personLastName resumes $hisOrHer previous volume ""- And everything will be fine! Just get in, retrieve the object, and return it to the Academy.""","""然后，嗯，他们送出的最后一支探险队，呃，最后的通讯传输了关于'敌对AI战舰'的信息。或许。"" $HeOrShe拉低了$hisOrHer的嗓音，""我们本不应该讨论它的。我的意思是在正式场合下。但这个任务也许...有些危险? 这就是报酬更丰厚的原因 —— $gaDA_reward 星币。您能完成的，对吧?"" 学者 $personLastName恢复了$hisOrHer之前的音量。""—— 一切都会非常顺利！只需要进去，拿到物品，然后把它交还给学院。""
 ","aseb_accept:Accept
-aseb_decline:Decline",,,
+aseb_decline:Decline","aseb_accept:接受
+aseb_decline:拒绝",,
 gaDAMissionReturn,PickGreeting,"$gaDA_returnHere score:1000
 Call $global.gaDA_ref updateData
 FireBest ASEBMissionReturn","ShowPersonVisual
@@ -700,8 +705,12 @@ Call $global.gaDA_ref updateStage","""Oh, you found that thing the $gaDA_departm
 OR
 Academician $personLastName glances between the datapads he's holding in each hand.
 
-""Captain, you have no idea how worried the $gaDA_department department was about this whatever-it-is,"" $heOrShe considers for a moment, ""'$gaDA_widget'. They'll be absolutely delighted when I let them know you found it. First though, I'll let the finance office know to release your payment."" ","
-",contact_pickAnotherGreeting:Continue,,,
+""Captain, you have no idea how worried the $gaDA_department department was about this whatever-it-is,"" $heOrShe considers for a moment, ""'$gaDA_widget'. They'll be absolutely delighted when I let them know you found it. First though, I'll let the finance office know to release your payment."" ","""噢，您找到了 $gaDA_department 部门非常担心的东西，呃—— '$gaDA_widget'，当然。"" $HeOrShe翻了翻白眼，""您不会相信他们对这个东西有多在意。这太棒了，我将马上传输您的报酬。""
+OR
+学者 $personLastName 在他双手拿着的数据板之间扫了一眼。
+
+""舰长，您不知道 $gaDA_department 部门之前对这个东西有多担心，不管它是什么。"" $heOrShe考虑了一会儿，""'$gaDA_widget'。当我告诉他们你找到它时，他们绝对会非常兴奋。不过首先，我会通知财务办公室支付您的报酬。"" 
+",contact_pickAnotherGreeting:Continue,contact_pickAnotherGreeting:继续,,
 # derelict interactions,,,,,"
 ",,,,
 gaDADerelictHostilesNear,OpenInteractionDialog,"$gaDA_entity score:1000
