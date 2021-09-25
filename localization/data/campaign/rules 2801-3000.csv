@@ -715,8 +715,7 @@ OR
 ",,,,
 gaDADerelictHostilesNear,OpenInteractionDialog,"$gaDA_entity score:1000
 HostileFleetNearbyAndAware","ShowDefaultVisual
-SetShortcut defaultLeave ESCAPE","Your $shipOrFleet makes a pass by the derelict, allowing your sensors officer to give it a cursory scan. Identity of target is verified positive, but with hostiles nearby and you can't safely run a deep scan or dispatch salvage teams to investigate and find $gaDA_widget.","
-",100:defaultLeave:Leave,,,
+SetShortcut defaultLeave ESCAPE","Your $shipOrFleet makes a pass by the derelict, allowing your sensors officer to give it a cursory scan. Identity of target is verified positive, but with hostiles nearby and you can't safely run a deep scan or dispatch salvage teams to investigate and find $gaDA_widget.",你的$shipOrFleet在残骸旁经过，你的传感器操作员对它进行了粗略的扫描。目标身份通过验证，但由于附近的敌人，你不能安全地进行深度扫描或者派遣打捞小组探查寻找$gaDA_widget。,100:defaultLeave:Leave,100:defaultLeave:离开,,
 gaDADerelictInteractions,OpenInteractionDialog,"$gaDA_entity score:1000
 !HostileFleetNearbyAndAware
 Call $global.gaDA_ref updateData","ShowDefaultVisual
@@ -727,15 +726,22 @@ Call $global.gaDA_ref updateStage","Your $shipOrFleet advances to intercept the 
 
 Your operations chief oversees the dispatch of salvage teams as they perform a clean, efficient breach and survey of the hulk. The mission target is missing from its position in the experiment team's project spec, but a young, green spacer follows signs of elevated radiation and soon discovers the $gaDA_widgetNoArticle in a secondary lab space.
 
-The chief meets your eyes and gives a gruff nod. Success. The target is packaged and extracted in record time; all that remains is to return it to the Galatia Academy.","
-",gaDA_continueBasic:Leave,,,
+The chief meets your eyes and gives a gruff nod. Success. The target is packaged and extracted in record time; all that remains is to return it to the Galatia Academy.","你的$shipOrFleet拦截到了残骸。你的传感器操作员进行了全频谱主动扫描，没有放气或者余热迹象。这是个被遗弃的无人废墟。你命令将遥测数据记录到给学院的任务报告文件中；他们细化额外的数据，并且这将证明你完成了工作。
+
+你的执行主官监督这打捞小组的派遣。他们高效准确地在残骸上打开了缺口，并进行了调查。任务目标并不在实验团队任务描述提供的坐标处，但一个年轻的绿色队员循着较高的辐射迹象很快在一个二级实验室空间中找到了 $gaDA_widgetNoArticle 。
+
+执行主官对上你的目光并生硬地点了点头。成功了。目标在记录下被打包和提取；剩下的就是把它送回Galatia学院。
+",gaDA_continueBasic:Leave,gaDA_continueBasic:离开,,
 gaDADerelictBasic2,GADADerelictInteraction,$gaDA_variation == BASIC,"$global.gaDA_gotWidget = true
 Call $global.gaDA_ref updateStage","Your $shipOrFleet advances to intercept the derelict. Your sensors officer runs a deep active-scan, noting rad-hot volumes and structure damage. This is a fresh, warm hulk, as derelicts go. Your ops chief sees the look you are about to give and orders the salvage teams to bring extra work-drones for the hot sectors.
 
 You follow the sweep of salvage teams through the hulk, flicking through display feeds of dead passageways clouded by ghostly debris. The mission target is exactly where it was supposed to be, but you suspect the glaze of carbon-silica on the facing wall was not an intended byproduct of the experiment. The $gaDA_widgetNoArticle appears to be largely intact.
 
-Your ops chief personally oversees packaging and extraction of the target. All that remains is to return it to the Galatia Academy.","
-",gaDA_continueBasic:Leave,,,
+Your ops chief personally oversees packaging and extraction of the target. All that remains is to return it to the Galatia Academy.","你的$shipOrFleet拦截到了残骸。你的传感器操作员进行了一次深度主动扫描，没有高热反应和结构损坏。这是个被遗弃的无人温暖废墟。你的行动主管看着你做出的手势，命令打捞小组带上额外的工作无人机以探查热点区域。
+
+你的视野随着打捞小组的扫荡穿过了残骸，在被幽灵般碎片笼罩着的死寂通道的回传画面间来回切换。任务目标确实在提供的坐标处，但是你怀疑对面墙上的碳硅釉并不是预期中实验副产物。$gaDA_widgetNoArticle 看上去基本完好无损。
+
+你的执行主官亲自监督目标的打包和提取。剩下的就是把它送回Galatia学院。",gaDA_continueBasic:Leave,gaDA_continueBasic:继续,,
 gaDADerelictContBasic,DialogOptionSelected,$option == gaDA_continueBasic,"#FireBest OpenInteractionDialog
 DismissDialog",,"
 ",,,,
@@ -743,23 +749,32 @@ gaDADerelictPiratesTookItStart,GADADerelictInteraction,$gaDA_variation == PIRATE
 
 ""More like a smash and grab,"" growls your ops chief. Whoever got here first was not a professional judging by the slipshod breaching cuts and tangle of discarded equipment.
 
-You send out a salvage team, and they perform a sweep with cautious efficiency. Your mission target is missing, but they do find something unexpected: a leaky suit crudely bolted to a bulkhead, occupant unconscious. The victim of some punishment, evidently. They�re cut free then placed in a quarantined bulkhead while a medic attempts to revive them.","
-",gaDA_continuePirates:Continue,,,
+You send out a salvage team, and they perform a sweep with cautious efficiency. Your mission target is missing, but they do find something unexpected: a leaky suit crudely bolted to a bulkhead, occupant unconscious. The victim of some punishment, evidently. They�re cut free then placed in a quarantined bulkhead while a medic attempts to revive them.","当你接近残骸时，你的传感器操作员指出有迹象显示你不是第一个拜访此处的。目标周围的气体和碎片符合最近有过一次打捞的状况。
+
+""更像一次粉碎抢夺，"" 你的执行主官低吼道。从草率的破口和乱七八糟的废弃设备判断，先到这里的人并不是专业人士。
+
+你派遣了一个打捞小组。他们谨慎地进行了一次扫荡。你的任务目标失踪了，但队员们确实找到了一些不寻常的东西：一套满是破洞的太空服被粗暴地拴在舱壁上，里面的人已经失去知觉。他们显然是某种惩罚的受害者。接着他们被解救下来放到了隔离的舱壁上，医生在尝试将他们救活。
+",gaDA_continuePirates:Continue,gaDA_continuePirates:继续,,
 gaDADerelictContPirates,DialogOptionSelected,$option == gaDA_continuePirates,"$global.gaDA_piratesTookIt = true
 Call $global.gaDA_ref updateStage","The victim is thankful and eager to talk- and definitely a pirate. You watch through a holofeed as a story comes out about being left behind due to a perceived transgression which, ""-the others got talking and decided just 'cause they didn't like me much that I was the one to blame. I didn't do a thing to deserve it!""
 
 All of your questions are answered at the cost of only breathable air, a hot meal, and a bulb of spirits.
 
-It becomes clear that these pirates knew something special was on the derelict and came here looking for it. They were also been caching supplies nearby, so it's likely they'll head there before trying to sell their treasure. If your fleet travels at high speed, you might just catch the pirates before they get away.","
-",gaDA_continuePirates2:Continue,,,
-gaDADerelictContPirates2,DialogOptionSelected,$option == gaDA_continuePirates2,,"All that remains is what is to be done with the unfortunate pirate who seem grateful and claims to have been wronged, but is any pirate out here really innocent? Could they be a security risk?","
+It becomes clear that these pirates knew something special was on the derelict and came here looking for it. They were also been caching supplies nearby, so it's likely they'll head there before trying to sell their treasure. If your fleet travels at high speed, you might just catch the pirates before they get away.","一名受害者很感激，也很想说话——他应该是一名海盗。你通过全息影像听到了由于被察觉到违规被抛在后面的故事。""-其他人决议我是罪魁祸首。他们不怎么喜欢我。我其实什么都没做！""
+
+你的所有问题都是以呼吸空气、一顿热饭和一杯烈酒为代价来回答的。
+
+很明显这些海盗知道残骸上有特殊的东西，并来到这寻找它。他们也在附近某处储存了物资, 所以很可能他们在卖出宝物之前会先去那里。如果你的舰队以高速航行，也许能在海盗离开前抓住他们。
+",gaDA_continuePirates2:Continue,gaDA_continuePirates2:继续,,
+gaDADerelictContPirates2,DialogOptionSelected,$option == gaDA_continuePirates2,,"All that remains is what is to be done with the unfortunate pirate who seem grateful and claims to have been wronged, but is any pirate out here really innocent? Could they be a security risk?","剩下的就是如何处理这位不幸的海盗。他似乎很感激并声称受到了冤枉。但这里的海盗真的是无辜的吗？他们会不会是安全隐患？
 ","gaDA_returnPirate:Pirates can't be trusted. Return them to the leaky ship.
-gaDA_takePirateIn:Give them a chance to prove themselves. (+1 crew)",,,
+gaDA_takePirateIn:Give them a chance to prove themselves. (+1 crew)","gaDA_returnPirate:海盗不可信。把他们送回破船上。
+gaDA_takePirateIn:给他们机会证明自己。(+1 船员)",,
 gaDADerelictReturnPirate,DialogOptionSelected,$option == gaDA_returnPirate,"#DespawnEntity
 DismissDialog",,"
 ",,,,
 gaDADerelictTakeInPirate,DialogOptionSelected,$option == gaDA_takePirateIn,AddCommodity crew 1,,"
-",gaDA_returnPirateCont:Leave,,,
+",gaDA_returnPirateCont:Leave,gaDA_returnPirateCont:离开,,
 gaDADerelictTakeInPirateCont,DialogOptionSelected,$option == gaDA_returnPirateCont,"#DespawnEntity
 DismissDialog",,"
 ",,,,
