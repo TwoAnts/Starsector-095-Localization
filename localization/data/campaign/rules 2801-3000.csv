@@ -260,7 +260,7 @@ FireAll PopulateOptions","Sebestyen nods.
 
 ""So, um. Captain. Is there anything else I can help you with?""","Sebestyen 点了点头. 
 
-""所以，呃... 舰长。有什么其他的我能帮您的吗?""",,,,
+""所以，呃... 舰长。有什么其他的我能帮你的吗?""",,,,
 gaATGpostSebestyenBairdBadC,DialogOptionSelected,$option == gaATG_postSebestyenBairdBadC,"$askedProvostUpset = true
 FireAll PopulateOptions","Sebestyen nods, his relief plain on his face.","
 Sebestyen 点了点头，脸上显得很轻松。",,,,
@@ -317,22 +317,22 @@ FireAll PopulateOptions","""Right, yes, um."" He seems nervous to be meeting a r
 
 You're not so sure of this.","""当然，是的，嗯"" 见到一位活生生的太空舰长似乎让他有点紧张；你甚至有点好奇他是怎么得到这个职位的。 
 
-""... Galatia学院内部的各个部门告诉我他们需要做什么，然后我会配合您这样的自由职业者提供，呃，必要的服务。呃，并且我通过财务办公室达成任务。我们必须确保您能够拿到报酬，这非常重要。""
+""... Galatia学院内部的各个部门告诉我他们需要做什么，然后我会配合你这样的自由职业者提供，呃，必要的服务。呃，并且我通过财务办公室达成任务。我们必须确保你能够拿到报酬，这非常重要。""
 
-""任何时候都可能有各种各样的工作对您开放，您只需要跟我核实一下。当然有时候可能它们都已经被完成。"" $HeOrShe 看着平板说道，""但是，额，看起来 Baird 院长希望您对任何事情都有优先权。她一定很欣赏您。""
+""任何时候都可能有各种各样的工作对你开放，你只需要跟我核实一下。当然有时候可能它们都已经被完成。"" $HeOrShe 看着平板说道，""但是，额，看起来 Baird 院长希望你对任何事情都有优先权。她一定很欣赏你。""
 
 你不置可否。",,,,
 asebDefaultGreeting,PickGreeting,"$id == sebestyen score:1000
 $metAlready","ShowPersonVisual
-FireAll PopulateOptions","""Welcome back captain, it's good to see you!"" says $personName cheerfully.","""欢迎回来，舰长！很高兴见到您！"" $personName 高兴地说道。",,,,
+FireAll PopulateOptions","""Welcome back captain, it's good to see you!"" says $personName cheerfully.","""欢迎回来，舰长！很高兴见到你！"" $personName 高兴地说道。",,,,
 asebOpenMHOptionText,UpdateMHOpenOptionText,$id == sebestyen score:1000,"SetOptionText mh_open ""询问可提供的任务""",,"
 ",,,,
-asebMHOpenText,MHOpenText,$id == sebestyen score:1000,FireBest AsebPreMissionListText,"$HeOrShe taps at a datapad. ""Let me look at what we�ve got lined up for you today... ""","$HeOrShe 轻敲数据板。""让我看看我们今天为您准备了什么任务... """,,,,
+asebMHOpenText,MHOpenText,$id == sebestyen score:1000,FireBest AsebPreMissionListText,"$HeOrShe taps at a datapad. ""Let me look at what we�ve got lined up for you today... ""","$HeOrShe 轻敲数据板。""让我看看我们今天为你准备了什么任务... """,,,,
 asebNoMissions,AsebPreMissionListText,"$id == sebestyen score:1000
-$mh_count <= 0",,"""Oh, that's too bad. It looks like there aren�t any current requests,"" $heOrShe says. $HeOrShe sounds genuinely sorry for you, but manages to perk up, ""Maybe next time?""","""哦，真糟糕。当前似乎没有任何请求。"" $heOrShe 说道。$HeOrShe 听起来为此感到非常抱歉，但最终振作起来，""也许您改天再来?""",,,,
+$mh_count <= 0",,"""Oh, that's too bad. It looks like there aren�t any current requests,"" $heOrShe says. $HeOrShe sounds genuinely sorry for you, but manages to perk up, ""Maybe next time?""","""哦，真糟糕。当前似乎没有任何请求。"" $heOrShe 说道。$HeOrShe 听起来为此感到非常抱歉，但最终振作起来，""也许你改天再来?""",,,,
 asebOneMission,AsebPreMissionListText,"$id == sebestyen score:1000
 $mh_count == 1
-$mh_firstInlineBlurb != null",$mh_doNotPrintBlurbs = true 0,"""I have just the one request here. $mh_firstInlineBlurb"", $heOrShe looks to you expectantly, ""It's yours if you want it.""","""我这只有一个任务。$mh_firstInlineBlurb"", $heOrShe 期待地看着你, ""如果您需要，它就是您的。""",,,,
+$mh_firstInlineBlurb != null",$mh_doNotPrintBlurbs = true 0,"""I have just the one request here. $mh_firstInlineBlurb"", $heOrShe looks to you expectantly, ""It's yours if you want it.""","""我这只有一个任务。$mh_firstInlineBlurb"", $heOrShe 期待地看着你, ""如果你需要，它就是你的。""",,,,
 asebMultipleMissionsPre,AsebPreMissionListText,"$id == sebestyen score:1000
 $mh_count > 1",,,"
 ",,,,
@@ -357,15 +357,15 @@ OR
 OR
 ""Great! You can- "" he seems to realize that you declined the mission after a moment.
 
-""You don't want to do it? Oh. Okay. Well. Maybe,"" he taps his datapad on his desk, ""Maybe we can find something else for you?""","他看上去有些沮丧，但仍努力挤出微笑。""如果您改变主意，一定要告诉我！""
+""You don't want to do it? Oh. Okay. Well. Maybe,"" he taps his datapad on his desk, ""Maybe we can find something else for you?""","他看上去有些沮丧，但仍努力挤出微笑。""如果你改变主意，一定要告诉我！""
 OR
 ""哦，"" 他说道, 失望了一会儿。但他很快振作起来，""也许还有别的可能？""
 OR
 ""嗯，当然。我完全了解。"" Sebestyen 飞快地扫描了他的数据板，""让我们看看还有什么... ""
 OR
-""可以的，您能做到—— "" 他似乎意识到你不久就取消了任务。
+""可以的，你能做到—— "" 他似乎意识到你不久就取消了任务。
 
-""您不想做这个吗？噢。好吧。也许，"" 他点击了桌上的数据板，""也许我们能为您找到别的任务？""",,,,
+""你不想做这个吗？噢。好吧。也许，"" 他点击了桌上的数据板，""也许我们能为你找到别的任务？""",,,,
 asebMissionAcceptGeneric,DialogOptionSelected,$option == aseb_accept,"unset $aseb_givePlayerNeutrinoDetector
 Call $mHub accept $missionId
 Call $mHub returnToList","""Great! Is there anything else I can do for you today?""
@@ -376,15 +376,15 @@ OR
 OR
 ""Always a pleasure to work with you, captain.""
 OR
-""Glad to hear it! Is there anything else you need?""","""好的！还有什么能为您效劳的吗？""
+""Glad to hear it! Is there anything else you need?""","""好的！还有什么能为你效劳的吗？""
 OR
 ""非常好！我会传达相关消息的。""
 OR
-""听起来不错。我会确保您有所需的一切。""
+""听起来不错。我会确保你有所需的一切。""
 OR
-""很高兴与您共事，舰长。""
+""很高兴与你共事，舰长。""
 OR
-""乐意之至！您还需要其他的吗？""
+""乐意之至！你还需要其他的吗？""
 ",,,,
 asebMissionReturnGreeting,ASEBMissionReturn,!$aseb_printedFirstReturnGreeting,$aseb_printedFirstReturnGreeting = true 0,You open comms to Academician $personLastName.,你打开了学者 $personLastName 的通讯链接。,,,,
 asebGivePlayerNDetectorOnAccept,DialogOptionSelected,"$option == aseb_accept
@@ -393,7 +393,7 @@ $aseb_givePlayerNeutrinoDetector score:1000","Highlight ""Neutrino Detector""
 unset $aseb_givePlayerNeutrinoDetector
 AddAbility gravitic_scan","Sebestyen jumps as if he just realized something. ""Captain! You might, ah, I've been authorized to provide you with a Neutrino Detector for the mission. Um, a technical crew is transferring the necessary equipment to your flagship, and,"" he taps his datapad, ""I've sent your sensors officer the documentation.""
 
-""We've found the Neutrino Detector very helpful in pinpointing interesting, um, things while surveying distant systems. Power sources show up especially well, though sometimes you get a false signal. Oh, and one more thing! We haven't figured out a way to quite close the regenerative loop on the plasma reflector uh... and uh, just be sure to stock extra volatiles to keep the detector running.""","Sebestyen 仿佛想到了某些事情般地跳了起来。 ""舰长！您也许，呃，我被授权为您提供一个中微子探测器。嗯，技术人员正在把必要的设备转移到您的旗舰上，并且，"" 他敲击着数据板，""我已经把文档发给了您的传感器操作员。""
+""We've found the Neutrino Detector very helpful in pinpointing interesting, um, things while surveying distant systems. Power sources show up especially well, though sometimes you get a false signal. Oh, and one more thing! We haven't figured out a way to quite close the regenerative loop on the plasma reflector uh... and uh, just be sure to stock extra volatiles to keep the detector running.""","Sebestyen 仿佛想到了某些事情般地跳了起来。 ""舰长！你也许，呃，我被授权为你提供一个中微子探测器。嗯，技术人员正在把必要的设备转移到你的旗舰上，并且，"" 他敲击着数据板，""我已经把文档发给了你的传感器操作员。""
 
 ""我们发现中微子探测器在探测遥远星系时精确定位有趣的物品非常有用。能量源显示地特别好，尽管有时会收到错误信号。哦，还有件事！我们还没办法很好地闭合等离子反射器上的正反馈环路... 呃，需要确保储存额外的挥发物来保持探测器的运行。""",aseb_accept:Continue,aseb_accept:继续,,
 ,,,,,"
@@ -420,9 +420,9 @@ BeginMission gaTTB","Academician Sebestyen taps at a datapad. ""Let me look at w
 
 ""It's, the, um, Provost Baird wants to speak with you,"" he says. He picks up the datapad again, examines it, and puts it down.
 
-""In person. Um. As soon as possible.""","学者 Sebestyen 敲击了数据板。""让我看看今天为您准备了什么... 哦。"" 他放下数据板，困惑地看着你。
+""In person. Um. As soon as possible.""","学者 Sebestyen 敲击了数据板。""让我看看今天为你准备了什么... 哦。"" 他放下数据板，困惑地看着你。
 
-""嗯，院长 Baird 想和您通话，"" 他说道。他拿起了数据板，再次确认了一下并放下。
+""嗯，院长 Baird 想和你通话，"" 他说道。他拿起了数据板，再次确认了一下并放下。
 
 ""当面。嗯。尽快。""","gaTTB_howAbout:""How about a mission?""
 cutCommLink:Leave","gaTTB_howAbout:""一个任务？""
@@ -436,14 +436,14 @@ $gaTTB_askedAlready",$global.bairdWillTalk = true,"Academician Sebestyen taps at
 
 ""Um."" He clears his throat. ""I guess that's everything for now?""","学者 Sebestyen 敲击着数据板。""让我看看—— 哦。"" 他放下了数据板。
 
-""很抱歉，舰长。在您见过院长 Baird 之前，您不能方位任何东西。我，嗯。她可能是... 您至少应该听听她把话说完，对吧?""
+""很抱歉，舰长。在你见过院长 Baird 之前，你不能方位任何东西。我，嗯。她可能是... 你至少应该听听她把话说完，对吧?""
 
 ""嗯。"" 他清了下喉咙。""我想现在就这些了?""",cutCommLink:Leave,cutCommLink:离开,,
 asebHowAboutAMission,DialogOptionSelected,$option == gaTTB_howAbout,,"""Oh no, that's quite impossible. I mean, she's ah- that is, I literally can't give you anything until the provost enables your contract code again."" Sebestyen holds up his datapad which practically glows with a string of bright DENIED codes. ""See?""
 
-""So. Um. A landing slot has been cleared for whenever you're ready.""","""哦，不，那绝不可能。我的意思是，她是 呃—— 也就是说，在院长再次启用您的合同代码前，我不能提供任何东西。"" Sebestyen 举起数据板，上面确实闪烁着""拒绝""字样。""看到了吗?""
+""So. Um. A landing slot has been cleared for whenever you're ready.""","""哦，不，那绝不可能。我的意思是，她是 呃—— 也就是说，在院长再次启用你的合同代码前，我不能提供任何东西。"" Sebestyen 举起数据板，上面确实闪烁着""拒绝""字样。""看到了吗?""
 
-""所以，嗯。着陆位已经清理完毕，等候您随时到来。""
+""所以，嗯。着陆位已经清理完毕，等候你随时到来。""
 ",cutCommLink:Leave,cutCommLink:离开,,
 ,,,,,"
 ",,,,
@@ -457,9 +457,9 @@ $global.gaATG_missionCompleted score:2000",,"""Ah,"" says Sebestyen. You can tel
 
 ""So."" He taps his fingers on the console. ""Everything is going well for you?""","""哦，"" Sebestyen 说到。你马上看出他有什么坏消息。""... $playerName 舰长，"" 他说到，然后咳嗽了一声。 
 
-""很高兴见到您。嗯。见到您总是很高兴。然而，院长，"" 他又咳嗽了一声，并靠得很。""她，呃... 锁定了您的合同代码。"" 他把数据板展示给你看; ""拒绝""字样的警告闪烁在屏幕上。
+""很高兴见到你。嗯。见到你总是很高兴。然而，院长，"" 他又咳嗽了一声，并靠得很。""她，呃... 锁定了你的合同代码。"" 他把数据板展示给你看; ""拒绝""字样的警告闪烁在屏幕上。
 
-""所以。"" 他在终端上敲击着手指。""您一切都还顺利吗？""",cutCommLink:Leave,cutCommLink:离开,,
+""所以。"" 他在终端上敲击着手指。""你一切都还顺利吗？""",cutCommLink:Leave,cutCommLink:离开,,
 ,,,,,"
 ",,,,
 # GA Missions - Sebestyen,,,,,"
@@ -471,7 +471,7 @@ gaDataOfferOption,gaData_option,,,,"
 ",gaData_start:Ask about data retrieval from the ruins on $gaData_planetName,gaData_start:询问来自 $gaData_planetName 上残骸的数据检索相关信息,,
 gaDataMissionTextBasicOrPirates,DialogOptionSelected,"$option == gaData_start
 $gaData_variation == BASIC","$missionId = gaData
-SetTextHighlights $gaData_dist $gaData_reward","""So this is an easy one, right? All you have to do is get to $gaData_planetName, in the $gaData_systemName system, which is,"" $heOrShe checks a different datapad, ""about $gaData_dist light-years away. We'll provide the exact coordinates of the $gaData_target you need to, um, access. Then once you're back in hypercomm range, send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits.�","""所以这很简单，对吗？您需要做的就是到达 $gaData_planetName，其位于 $gaData_systemName 星系，距离"" $heOrShe 检查着另一个数据板，""大概有 $gaData_dist 光年。 我们会提供您需要访问的 $gaData_target 的准确坐标。然后一旦您回到了超通讯的范围，把加密内容发回 Academy，财务办公室会支付您 $gaData_reward 星币。""","aseb_accept:Accept
+SetTextHighlights $gaData_dist $gaData_reward","""So this is an easy one, right? All you have to do is get to $gaData_planetName, in the $gaData_systemName system, which is,"" $heOrShe checks a different datapad, ""about $gaData_dist light-years away. We'll provide the exact coordinates of the $gaData_target you need to, um, access. Then once you're back in hypercomm range, send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits.�","""所以这很简单，对吗？你需要做的就是到达 $gaData_planetName，其位于 $gaData_systemName 星系，距离"" $heOrShe 检查着另一个数据板，""大概有 $gaData_dist 光年。 我们会提供你需要访问的 $gaData_target 的准确坐标。然后一旦你回到了超通讯的范围，把加密内容发回 Academy，财务办公室会支付你 $gaData_reward 星币。""","aseb_accept:Accept
 aseb_decline:Decline","aseb_accept:接受
 aseb_decline:拒绝",,
 gaDataMissionTextRemnants,DialogOptionSelected,"$option == gaData_start
@@ -480,12 +480,12 @@ SetTextHighlights $gaData_dist $gaData_reward","Academician $personLastName make
 
 $HeOrShe turns to you, closes $hisOrHer eyes to brace for a moment, then puts on an impressive smile before proceeding. ""So this won't be a problem right? I mean, we have the exact coordinates of the $gaData_target for you. On $gaData_planetName, in the $gaData_systemName system, which is $gaData_dist light-years away. You get in, you get out, and once you're in hypercomm range, just send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits. No problem!""","学者 $personLastName 在阅读$hisOrHer数据板时发出了一系列小而奇怪的噪音。""哦不。哦。嗯。好的。""
 
-$HeOrShe转向你，闭上$hisOrHer双眼振作了一会, 然后在继续之前露出令人印象深刻的微笑。""所以，这将不会是问题，对吗？我的意思是，我们会为您提供 $gaData_target 的准确坐标。它在 $gaData_planetName 上，位于 $gaData_systemName 星系，大概距离此处 $gaData_dist 光年。您进去，然后出来，一旦您在超通讯的范围内，把加密内容发回Academy，财务办公室会支付您 $gaData_reward 星币。没问题的！""","gaData_remCont:""But?""","gaData_remCont:""但是?""",,
+$HeOrShe转向你，闭上$hisOrHer双眼振作了一会, 然后在继续之前露出令人印象深刻的微笑。""所以，这将不会是问题，对吗？我的意思是，我们会为你提供 $gaData_target 的准确坐标。它在 $gaData_planetName 上，位于 $gaData_systemName 星系，大概距离此处 $gaData_dist 光年。你进去，然后出来，一旦你在超通讯的范围内，把加密内容发回Academy，财务办公室会支付你 $gaData_reward 星币。没问题的！""","gaData_remCont:""But?""","gaData_remCont:""但是?""",,
 gaDataMissionTextRemnants2,DialogOptionSelected,$option == gaData_remCont,,"A longish pause, which is unusual for Academician $personLastName, who has a way of filling uncomfortable gaps in conversation.
 
 ""But. We�re not supposed to talk about it. But. If you recall all those rumors around the First AI War... well, you can ask in the Persean Studies department maybe? But there is a, um, possibility, maybe, that you will encounter certain, um,"" $heOrShe looks down to check the exact phrasing, ""'autonomous weapon systems'. It says it might be quite dangerous, which is why this pays more than usual. I'm sure it's nothing, right? Ha-ha. You'll be fine?""","学者 $personLastName 出现了一段不同寻常的长时间停顿。他本可以填补这些谈话中令人不安的空白。
 
-""但是，我们不应该讨论它。但是，如果你还记得关于第一次AI战争的所有谣言... 嗯，也许您可以在 Persean 研究部问问？但是有一个，嗯，可能，您会遇到一些，嗯，"" $heOrShe 向下看以检查准确的措辞，""'自主武器系统'。据说它们可能相当危险。这就是为什么奖励更高的原因。我确信那不会有什么影响，对吗? 哈哈，你觉得还好，对吧？""","aseb_accept:Accept
+""但是，我们不应该讨论它。但是，如果你还记得关于第一次AI战争的所有谣言... 嗯，也许你可以在 Persean 研究部问问？但是有一个，嗯，可能，你会遇到一些，嗯，"" $heOrShe 向下看以检查准确的措辞，""'自主武器系统'。据说它们可能相当危险。这就是为什么奖励更高的原因。我确信那不会有什么影响，对吗? 哈哈，你觉得还好，对吧？""","aseb_accept:Accept
 aseb_decline:Decline","aseb_accept:接受
 aseb_decline:拒绝",,
 gaDataMissionTextDeciv,DialogOptionSelected,"$option == gaData_start
@@ -494,11 +494,11 @@ SetTextHighlights $gaData_dist $gaData_marinesReq $gaData_reward","""Right. Uh. 
 
 $HeOrShe pauses and you watch the process of $himOrHer considering how to phrase $hisOrHer next words. ""There are reports of ah, a 'decivilized' population. Probably? They don't have weapons that can take on a spaceship but it says here they have,"" $heOrShe taps at another datapad, ""a lot of handheld weapons. And they're ... fairly hostile. Usually. So, you should definitely bring,"" yet another datapad, ""around $gaData_marinesReq or so marines. Just in case. I mean, hopefully no one gets shot right? Statistically speaking, um. The data suggests that only low casualties are a possibility?""
 
-$HeOrShe looks a little ill at the thought, but recovers quickly, ""Once you�re back in hypercomms range, just send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits. Easy!""","""对的。嗯。所以一旦您到达了位于 $gaData_systemName 星系的 $gaData_planetName ，距离大概 $gaData_dist 光年，您需要前往 $gaData_target 的准确坐标。这可能会稍微有点，呃，复杂。""
+$HeOrShe looks a little ill at the thought, but recovers quickly, ""Once you�re back in hypercomms range, just send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits. Easy!""","""对的。嗯。所以一旦你到达了位于 $gaData_systemName 星系的 $gaData_planetName ，距离大概 $gaData_dist 光年，你需要前往 $gaData_target 的准确坐标。这可能会稍微有点，呃，复杂。""
 
-$HeOrShe停了下来，你看着$himOrHer在考虑$hisOrHer下句话的措辞。""有一些关于，呃，一个'非文明'族群的报告。 可能？他们没有在飞船上搭载的武器，但据说他们"" $heOrShe敲击另一个数据板，""有很多手持武器。并且他们...相当有敌意。一般是这样。所以，您一定要带着，"" 又一个数据板，""大约 $gaData_marinesReq 或更多的陆战队队员。以防万一。我的意思是，希望没人会被射击，对吧? 根据统计数据，嗯。数据显示可能会有一些伤亡？""
+$HeOrShe停了下来，你看着$himOrHer在考虑$hisOrHer下句话的措辞。""有一些关于，呃，一个'非文明'族群的报告。 可能？他们没有在飞船上搭载的武器，但据说他们"" $heOrShe敲击另一个数据板，""有很多手持武器。并且他们...相当有敌意。一般是这样。所以，你一定要带着，"" 又一个数据板，""大约 $gaData_marinesReq 或更多的陆战队队员。以防万一。我的意思是，希望没人会被射击，对吧? 根据统计数据，嗯。数据显示可能会有一些伤亡？""
 
-$HeOrShe想到这个就有点不舒服，但是很快恢复过来，""一旦您回到超通讯的范围，把加密数据发回Academy，财务办公室会支付 $gaData_reward 星币。很简单！""
+$HeOrShe想到这个就有点不舒服，但是很快恢复过来，""一旦你回到超通讯的范围，把加密数据发回Academy，财务办公室会支付 $gaData_reward 星币。很简单！""
 ","aseb_accept:Accept
 aseb_decline:Decline","aseb_accept:接受
 aseb_decline:拒绝",,
@@ -508,11 +508,11 @@ SetTextHighlights $gaData_dist $gaData_reward","""Yes, so you�ll need to go to
 
 Academician $personLastName explains, ""$gaData_pulsarName is a pulsar, so you�ll have to be very, very careful. I�m so jealous! Rapidly spinning jets of high energy charged particles, oh, it�s a once-in-a-lifetime sight. I mean, that�s what I hear from the Astrometrics people,"" $heOrShe sighs. ""So, um, hopefully your shields are up to spec?""
 
-$HeOrShe continues, ""Once you�re back in hypercomms range, send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits.""","""是的，所以你需要前往位于 $gaData_systemName 星系的 $gaData_planetName ，距离约 $gaData_dist 光年。我们会提供您需要访问的 $gaData_target 的准确坐标。并且，哦，哦，有一个重要的点。"" $heOrShe敲击了一个按键，将显示切换到了星图。该星图显示在相反的两极的两条弧线上发生着爆炸。
+$HeOrShe continues, ""Once you�re back in hypercomms range, send the encrypted contents back to the Academy and the finance office will pay you $gaData_reward credits.""","""是的，所以你需要前往位于 $gaData_systemName 星系的 $gaData_planetName ，距离约 $gaData_dist 光年。我们会提供你需要访问的 $gaData_target 的准确坐标。并且，哦，哦，有一个重要的点。"" $heOrShe敲击了一个按键，将显示切换到了星图。该星图显示在相反的两极的两条弧线上发生着爆炸。
 
-学者 $personLastName 解释道，""$gaData_pulsarName 是一颗脉冲星，所以您必须非常非常小心。我非常羡慕！高速旋转的高能带电粒子喷流，哦，真是一生难得一见的景象。我的意思是，这是我从天文学家那里听说的，"" $heOrShe叹息道。""所以，嗯，希望您的护盾能符合规格？""
+学者 $personLastName 解释道，""$gaData_pulsarName 是一颗脉冲星，所以你必须非常非常小心。我非常羡慕！高速旋转的高能带电粒子喷流，哦，真是一生难得一见的景象。我的意思是，这是我从天文学家那里听说的，"" $heOrShe叹息道。""所以，嗯，希望你的护盾能符合规格？""
 
-$HeOrShe接着道，""一旦您回到超通讯的范围，把加密数据发回Academy，财务办公室会支付 $gaData_reward 星币。""","aseb_accept:Accept
+$HeOrShe接着道，""一旦你回到超通讯的范围，把加密数据发回Academy，财务办公室会支付 $gaData_reward 星币。""","aseb_accept:Accept
 aseb_decline:Decline","aseb_accept:接受
 aseb_decline:拒绝",,
 gaDataPlanetInteraction,OpenInteractionDialog,"$gaData_targetPlanet score:1000
@@ -572,7 +572,7 @@ $hailing = true 0",,"
 gaDataPirateOpenComm,OpenCommLink,"$entity.gaData_pirateConv score:100
 Call $global.gaData_ref updateData","$entity.ignorePlayerCommRequests = true
 MakeOtherFleetImportant gaData false
-FireBest GADataPirateConvStart","""噢，船长~ 能找到目标非常不错！我们所有人都钦佩您的才智，"" $heOrShe转过$hisOrHer肩膀向$hisOrHer员工致辞, ""Don�t we, ya vac-hogs?""
+FireBest GADataPirateConvStart","""噢，船长~ 能找到目标非常不错！我们所有人都钦佩你的才智，"" $heOrShe转过$hisOrHer肩膀向$hisOrHer员工致辞, ""Don�t we, ya vac-hogs?""
 
 You hear, quietly, the pirate bridge crew giving a round of ""Aye!""s amid hooting and applause.","""噢，船长~ 能找到目标非常不错！我们所有人都钦佩你的才智，"" $heOrShe转过$hisOrHer肩膀向$hisOrHer员工致辞, ""我们同样如此，不是吗？真空猪们！""
 
@@ -665,7 +665,7 @@ You stick to your story, creating believable details on the fly, and manage to t
 
 你坚持自己的说法，并不断完善细节，设法让$himOrHer完全相信。
 
-""我，是的，...你！，"" 海盗舰长愤怒地向下属打手势，""立即！把燃料和补给转移过来。"" $HeOrShe转向显示器，愠怒道 ""希望您别把这事告诉老板。""
+""我，是的，...你！，"" 海盗舰长愤怒地向下属打手势，""立即！把燃料和补给转移过来。"" $HeOrShe转向显示器，愠怒道 ""希望你别把这事告诉老板。""
 ","cutCommLink:""I won't, I promise.""","cutCommLink:""我不会的，我发誓。""",,
 ,,,,,"
 ",,,,
@@ -679,9 +679,9 @@ $gaDA_notRemnants","$missionId = gaDA
 SetTextHighlights $gaDA_dist $gaDA_reward
 $aseb_givePlayerNeutrinoDetector = true 0","""So the $gaDA_department department needs you to pop on over to the $gaDA_systemName, that�s $gaDA_dist light-years away, to retrieve, um,"" $heOrShe squints at a datapad, ""'$gaDA_widget' from a derelict. I guess it�s in the ship? Or maybe the cargo? It says here they have a pretty good idea of exactly where it is in the hull volume, anyway. This should be simple, right?""
 
-$HeOrShe pauses briefly. ""Oh, right, the payment! Once you return the $gaDA_widgetNoArticle to the Academy, the finance office will pay you $gaDA_reward credits.""","""所以 $gaDA_department 需要您出现在 $gaDA_systemName，距离此处 $gaDA_dist 光年，以获取，呃，"" $heOrShe斜视着数据板，""残骸中的'$gaDA_widget'。我猜它在一艘飞船里? 或者在货箱里? 反正，据说他们非常清楚它在船体中的确切位置。那应该很简单，对吧?""
+$HeOrShe pauses briefly. ""Oh, right, the payment! Once you return the $gaDA_widgetNoArticle to the Academy, the finance office will pay you $gaDA_reward credits.""","""所以 $gaDA_department 需要你出现在 $gaDA_systemName，距离此处 $gaDA_dist 光年，以获取，呃，"" $heOrShe斜视着数据板，""残骸中的'$gaDA_widget'。我猜它在一艘飞船里? 或者在货箱里? 反正，据说他们非常清楚它在船体中的确切位置。那应该很简单，对吧?""
 
-$HeOrShe稍微停顿了一下。""噢，对，还有报酬! 一旦您将 $gaDA_widgetNoArticle 带回学院，财务办公室会支付您 $gaDA_reward 星币。""
+$HeOrShe稍微停顿了一下。""噢，对，还有报酬! 一旦你将 $gaDA_widgetNoArticle 带回学院，财务办公室会支付你 $gaDA_reward 星币。""
 ","aseb_accept:Accept
 aseb_decline:Decline","aseb_accept:接受
 aseb_decline:拒绝",,
@@ -691,9 +691,9 @@ SetTextHighlights $gaDA_dist $gaDA_fuel","Academician Sebestyen's eyes go wide a
 
 He or she puts on a bright smile. ""This will be simple, they know exactly where to find the, um,"" $heOrShe looks back to the datapad, brow creased, ""'$gaDA_widgetNoArticle' in the target�s hull. Just send a salvage crew, get the thing, and off you go! And that�s in the $gaDA_systemName, just $gaDA_dist light-years, there and back with,� a few taps on a different datapad, ""around $gaDA_fuel units of fuel for your fleet."" The academician shifts uncomfortably, as if $heOrShe doesn�t want to deliver bad news.","学者Sebestyen在$heOrShe阅读数据板时目光还留意着四周，然后$heOrShe快速地看向你。 
 
-他或她露出了灿烂的笑容。""这会很简单，他们知道具体哪里可以找到，呃，"" $heOrShe看了眼数据板，皱眉道，""目标舰船中的'$gaDA_widgetNoArticle'。只需要派遣打捞小组，拿到东西，然后离开! 目标在 $gaDA_systemName, 仅仅 $gaDA_dist 光年远，您的舰队往返需要，"" 在另一个数据板上轻敲几下，""大概 $gaDA_fuel 单位的燃料。"" 这位学者不舒服地晃动了一下，好像$heOrShe不想传递坏消息。","gaDA_and:""And?""","gaDA_and:""然后呢?""",,
+他或她露出了灿烂的笑容。""这会很简单，他们知道具体哪里可以找到，呃，"" $heOrShe看了眼数据板，皱眉道，""目标舰船中的'$gaDA_widgetNoArticle'。只需要派遣打捞小组，拿到东西，然后离开! 目标在 $gaDA_systemName, 仅仅 $gaDA_dist 光年远，你的舰队往返需要，"" 在另一个数据板上轻敲几下，""大概 $gaDA_fuel 单位的燃料。"" 这位学者不舒服地晃动了一下，好像$heOrShe不想传递坏消息。","gaDA_and:""And?""","gaDA_and:""然后呢?""",,
 gaDAMissionTextRemnants2,DialogOptionSelected,$option == gaDA_and,"SetTextHighlights $gaDA_reward
-$aseb_givePlayerNeutrinoDetector = true 0","""And. Well, the last expedition they sent. Um. The last transmission said something about 'hostile AI warships'. Maybe."" $HeOrShe drops $hisOrHer voice, ""We're not supposed to talk about it. Officially, I mean. But it could be ... maybe dangerous? That�s why this one pays more than usual - $gaDA_reward credits. You can handle it, right?"" Academician $personLastName resumes $hisOrHer previous volume ""- And everything will be fine! Just get in, retrieve the object, and return it to the Academy.""","""然后，嗯，他们送出的最后一支探险队，呃，最后的通讯传输了关于'敌对AI战舰'的信息。或许。"" $HeOrShe拉低了$hisOrHer的嗓音，""我们本不应该讨论它的。我的意思是在正式场合下。但这个任务也许...有些危险? 这就是报酬更丰厚的原因 —— $gaDA_reward 星币。您能完成的，对吧?"" 学者 $personLastName恢复了$hisOrHer之前的音量。""—— 一切都会非常顺利！只需要进去，拿到物品，然后把它交还给学院。""
+$aseb_givePlayerNeutrinoDetector = true 0","""And. Well, the last expedition they sent. Um. The last transmission said something about 'hostile AI warships'. Maybe."" $HeOrShe drops $hisOrHer voice, ""We're not supposed to talk about it. Officially, I mean. But it could be ... maybe dangerous? That�s why this one pays more than usual - $gaDA_reward credits. You can handle it, right?"" Academician $personLastName resumes $hisOrHer previous volume ""- And everything will be fine! Just get in, retrieve the object, and return it to the Academy.""","""然后，嗯，他们送出的最后一支探险队，呃，最后的通讯传输了关于'敌对AI战舰'的信息。或许。"" $HeOrShe拉低了$hisOrHer的嗓音，""我们本不应该讨论它的。我的意思是在正式场合下。但这个任务也许...有些危险? 这就是报酬更丰厚的原因 —— $gaDA_reward 星币。你能完成的，对吧?"" 学者 $personLastName恢复了$hisOrHer之前的音量。""—— 一切都会非常顺利！只需要进去，拿到物品，然后把它交还给学院。""
 ","aseb_accept:Accept
 aseb_decline:Decline","aseb_accept:接受
 aseb_decline:拒绝",,
@@ -705,11 +705,11 @@ Call $global.gaDA_ref updateStage","""Oh, you found that thing the $gaDA_departm
 OR
 Academician $personLastName glances between the datapads he's holding in each hand.
 
-""Captain, you have no idea how worried the $gaDA_department department was about this whatever-it-is,"" $heOrShe considers for a moment, ""'$gaDA_widget'. They'll be absolutely delighted when I let them know you found it. First though, I'll let the finance office know to release your payment."" ","""噢，您找到了 $gaDA_department 部门非常担心的东西，呃—— '$gaDA_widget'，当然。"" $HeOrShe翻了翻白眼，""您不会相信他们对这个东西有多在意。这太棒了，我将马上传输您的报酬。""
+""Captain, you have no idea how worried the $gaDA_department department was about this whatever-it-is,"" $heOrShe considers for a moment, ""'$gaDA_widget'. They'll be absolutely delighted when I let them know you found it. First though, I'll let the finance office know to release your payment."" ","""噢，你找到了 $gaDA_department 部门非常担心的东西，呃—— '$gaDA_widget'，当然。"" $HeOrShe翻了翻白眼，""你不会相信他们对这个东西有多在意。这太棒了，我将马上传输你的报酬。""
 OR
 学者 $personLastName 在他双手拿着的数据板之间扫了一眼。
 
-""舰长，您不知道 $gaDA_department 部门之前对这个东西有多担心，不管它是什么。"" $heOrShe考虑了一会儿，""'$gaDA_widget'。当我告诉他们你找到它时，他们绝对会非常兴奋。不过首先，我会通知财务办公室支付您的报酬。"" 
+""舰长，你不知道 $gaDA_department 部门之前对这个东西有多担心，不管它是什么。"" $heOrShe考虑了一会儿，""'$gaDA_widget'。当我告诉他们你找到它时，他们绝对会非常兴奋。不过首先，我会通知财务办公室支付你的报酬。"" 
 ",contact_pickAnotherGreeting:Continue,contact_pickAnotherGreeting:继续,,
 # derelict interactions,,,,,"
 ",,,,
@@ -728,9 +728,9 @@ Your operations chief oversees the dispatch of salvage teams as they perform a c
 
 The chief meets your eyes and gives a gruff nod. Success. The target is packaged and extracted in record time; all that remains is to return it to the Galatia Academy.","你的$shipOrFleet拦截到了残骸。你的传感器操作员进行了全频谱主动扫描，没有放气或者余热迹象。这是个被遗弃的无人废墟。你命令将遥测数据记录到给学院的任务报告文件中；他们细化额外的数据，并且这将证明你完成了工作。
 
-你的执行主官监督这打捞小组的派遣。他们高效准确地在残骸上打开了缺口，并进行了调查。任务目标并不在实验团队任务描述提供的坐标处，但一个年轻的绿色队员循着较高的辐射迹象很快在一个二级实验室空间中找到了 $gaDA_widgetNoArticle 。
+你的行动队长监督这打捞小组的派遣。他们高效准确地在残骸上打开了缺口，并进行了调查。任务目标并不在实验团队任务描述提供的坐标处，但一个年轻的绿色队员循着较高的辐射迹象很快在一个二级实验室空间中找到了 $gaDA_widgetNoArticle 。
 
-执行主官对上你的目光并生硬地点了点头。成功了。目标在记录下被打包和提取；剩下的就是把它送回Galatia学院。
+行动队长对上你的目光并生硬地点了点头。成功了。目标在记录下被打包和提取；剩下的就是把它送回Galatia学院。
 ",gaDA_continueBasic:Leave,gaDA_continueBasic:离开,,
 gaDADerelictBasic2,GADADerelictInteraction,$gaDA_variation == BASIC,"$global.gaDA_gotWidget = true
 Call $global.gaDA_ref updateStage","Your $shipOrFleet advances to intercept the derelict. Your sensors officer runs a deep active-scan, noting rad-hot volumes and structure damage. This is a fresh, warm hulk, as derelicts go. Your ops chief sees the look you are about to give and orders the salvage teams to bring extra work-drones for the hot sectors.
@@ -741,7 +741,7 @@ Your ops chief personally oversees packaging and extraction of the target. All t
 
 你的视野随着打捞小组的扫荡穿过了残骸，在被幽灵般碎片笼罩着的死寂通道的回传画面间来回切换。任务目标确实在提供的坐标处，但是你怀疑对面墙上的碳硅釉并不是预期中实验副产物。$gaDA_widgetNoArticle 看上去基本完好无损。
 
-你的执行主官亲自监督目标的打包和提取。剩下的就是把它送回Galatia学院。",gaDA_continueBasic:Leave,gaDA_continueBasic:继续,,
+你的行动队长亲自监督目标的打包和提取。剩下的就是把它送回Galatia学院。",gaDA_continueBasic:Leave,gaDA_continueBasic:继续,,
 gaDADerelictContBasic,DialogOptionSelected,$option == gaDA_continueBasic,"#FireBest OpenInteractionDialog
 DismissDialog",,"
 ",,,,
@@ -749,9 +749,9 @@ gaDADerelictPiratesTookItStart,GADADerelictInteraction,$gaDA_variation == PIRATE
 
 ""More like a smash and grab,"" growls your ops chief. Whoever got here first was not a professional judging by the slipshod breaching cuts and tangle of discarded equipment.
 
-You send out a salvage team, and they perform a sweep with cautious efficiency. Your mission target is missing, but they do find something unexpected: a leaky suit crudely bolted to a bulkhead, occupant unconscious. The victim of some punishment, evidently. They�re cut free then placed in a quarantined bulkhead while a medic attempts to revive them.","当你接近残骸时，你的传感器操作员指出有迹象显示你不是第一个拜访此处的。目标周围的气体和碎片符合最近有过一次打捞的状况。
+You send out a salvage team, and they perform a sweep with cautious efficiency. Your mission target is missing, but they do find something unexpected: a leaky suit crudely bolted to a bulkhead, occupant unconscious. The victim of some punishment, evidently. They�re cut free then placed in a quarantined bulkhead while a medic attempts to revive them.","当你接近残骸时，你的传感器操作员指出有迹象显示你不是第一个拜访此处的。目标船身周围的气体和碎片显示最近有过一次打捞。
 
-""更像一次粉碎抢夺，"" 你的执行主官低吼道。从草率的破口和乱七八糟的废弃设备判断，先到这里的人并不是专业人士。
+""更像一次粉碎抢夺，"" 你的行动队长低吼道。从草率的破口和乱七八糟的废弃设备判断，先到这里的人并不是专业人士。
 
 你派遣了一个打捞小组。他们谨慎地进行了一次扫荡。你的任务目标失踪了，但队员们确实找到了一些不寻常的东西：一套满是破洞的太空服被粗暴地拴在舱壁上，里面的人已经失去知觉。他们显然是某种惩罚的受害者。接着他们被解救下来放到了隔离的舱壁上，医生在尝试将他们救活。
 ",gaDA_continuePirates:Continue,gaDA_continuePirates:继续,,
@@ -780,13 +780,15 @@ DismissDialog",,"
 ",,,,
 gaDADerelictScavengerStart,GADADerelictInteraction,$gaDA_variation == SCAVENGER,,"You approach the derelict. Your sensors officer quickly points out signs that you're not the first to have found it: Outgassing and debris around the target�s hull match the profile of a recent salvage operation. ""... And they were professionals,"" growls your ops chief with more than a hint of respect. Whoever got here first made efficient breaching cuts at key access points, leaving only a neat net of lines secured to borer-pitons favoured by deep-space salvage rats.
 
-You send out a salvage team knowing what they'll find, and they perform their sweep with cautious efficiency. Your mission target is missing; you order the team's telemetry and holo feeds to be attached to the mission file as proof that you performed this job for the Academy to the best of your ability.","
-",gaDA_continueScav:Continue,,,
+You send out a salvage team knowing what they'll find, and they perform their sweep with cautious efficiency. Your mission target is missing; you order the team's telemetry and holo feeds to be attached to the mission file as proof that you performed this job for the Academy to the best of your ability.","你接近了残骸。你的传感器操作员指出你们并不是首先发现这里的迹象：目标船身周围的废气和碎片显示最近有过一次打捞行动。""... 并且他们是专业人士,"" 你的行动队长相当尊重地说道。 先到的人在关键接入点上制造了有效的切口，只留下一张整齐的线网，固定在深空打捞鼠喜欢的钻孔岩钉上。
+
+尽管可能什么也找不到，你依然派遣了打捞小组。他们进行了谨慎高效地清扫。你的任务目标失踪了; 你命令将小组的通讯和全息反馈附到任务档案里作为你尽力为学院完成工作的证据。",gaDA_continueScav:Continue,,,
 gaDADerelictScavengerCont,DialogOptionSelected,$option == gaDA_continueScav,"$global.gaDA_scavengerTookIt = true
 Call $global.gaDA_ref updateStage","""Captain."" Your operations chief calls attention to an active screen displaying the residual heat around the breaching cuts. ""They're still hot. We might be able to catch the scavengers who made these cuts.""
 
-Your mind races, putting a plan together. If you burn fast toward the closest jump-point - their logical destination, possibly after spending more time in-system - you might just catch the scavengers before they jump for hyperspace. Perhaps they can be persuaded to give up the piece you're looking for.","
-",gaDA_scavLeave:Leave,,,
+Your mind races, putting a plan together. If you burn fast toward the closest jump-point - their logical destination, possibly after spending more time in-system - you might just catch the scavengers before they jump for hyperspace. Perhaps they can be persuaded to give up the piece you're looking for.","""舰长。"" 你的行动队长提醒注意屏幕上显示的切口周围的余热反应。""他们仍然很热。我们也许能拦截到这些制造切口的打捞者。""
+
+你的思维飞转，马上制定了一个计划。如果你可以马上赶到最近的跳跃点 —— 他们理论上的目的地，他们很可能在星系内花费更多的时间 —— 你也许可以在他们跃迁到超空间之前拦截到他们。也许他们能被说服放弃你在寻找的碎片。",gaDA_scavLeave:Leave,gaDA_scavLeave:离开,,
 gaDADerelictScavengerLeave,DialogOptionSelected,$option == gaDA_scavLeave,"#DespawnEntity
 DismissDialog",,"
 ",,,,
@@ -795,16 +797,19 @@ Call $global.gaDA_ref updateStage","The bridge crew is muted; you sense an edge 
 
 Your operations chief dispatches salvage teams. They perform an efficient breach and survey of the hulk. Battle damage and agrav failure has made a riotous mess of the internal volumes, but your experienced crews have dealt with this situation on countless occasions. They spread out, setting temporary cargo nets to contain and sort the slowly drifting clouds of salvage. Using search parameters based on the specs provided by the Galatia Academy experiment team, the $gaDA_widgetNoArticle is located and secured.
 
-The chief notes the mission time elapsed and gives gruff words of approval over the salvage comms. The teams return, nervous but in good spirits, with their treasure in tow. You need not linger in this place.","
-",gaDA_continueBasic:Leave,,,
+The chief notes the mission time elapsed and gives gruff words of approval over the salvage comms. The teams return, nervous but in good spirits, with their treasure in tow. You need not linger in this place.","船舱内鸦雀无声; 你打破了沉闷的气氛。他们惧怕于第一次AI战争遗留的外来力量。你想要迅速完成这项行动，以免触发隐蔽观察者的某些半功能威吓程序。
+
+你的行动队长派遣了数个打捞小组。他们进行了有效的切口并且调查了整个残骸。战斗损伤和结构崩坏使得内部混乱不堪，但是经验丰富的船员们已经无数次地处理过类似的情况。他们分散开来，设置临时的货舱网络以容纳和整理缓慢漂浮的打捞物。使用基于Galatia学院实验团队提供数据的搜索参数，$gaDA_widgetNoArticle被定位和保护起来。
+
+行动队长注意到任务接近尾声，通过打捞通信频道给出了完成确认。小组纷纷返回，成员们紧张中带着兴奋，东西已经到手。此地不宜久留。
+",gaDA_continueBasic:Leave,gaDA_continueBasic:离开,,
 ,,,,,"
 ",,,,
 # conversation with pirates,,,,,"
 ",,,,
 gaDAFleetWithWidgetDefeated,gaDAFleetWithWidgetDefeated,"$someShipsDestroyed
 !$global.gaDA_gotWidget","$global.gaDA_gotWidget = true
-Call $global.gaDA_ref updateStage",Your sensors officer reports that an ejected cargo pod floating in a spray of post-battle debris contains something that matches the mission target specifications. A salvage team quickly secures the object in your hold.,"
-",,,,
+Call $global.gaDA_ref updateStage",Your sensors officer reports that an ejected cargo pod floating in a spray of post-battle debris contains something that matches the mission target specifications. A salvage team quickly secures the object in your hold.,你的传感器操作员报告一排弹射出来的货舱漂浮在战后碎片的包围中，其中包含符合任务目标规格的东西。打捞小组快速收纳了到手的东西。,,,,
 gaDAPirateEncounter,BeginFleetEncounter,"$gaDA_pirate score:1000
 !$gaDA_encounteredAlready
 Call $global.gaDA_ref updateData","$gaDA_encounteredAlready = true
@@ -814,22 +819,30 @@ HailPlayer",,"
 gaDAPirateOpenComm,OpenCommLink,"$entity.gaDA_pirate score:1000
 !$entity.ignorePlayerCommRequests
 Call $global.gaDA_ref updateData","$entity.ignorePlayerCommRequests = true
-SetStoryOption gaDA_kantaSentMe 1 gaDA_kantaSentMe general ""Pretended to know Kanta to retrieve $gaDA_widget from pirates""","The comms open and before you stands the pirate leader. ""What do you want, scavenger?"" $heOrShe says with contempt.
+SetStoryOption gaDA_kantaSentMe 1 gaDA_kantaSentMe general ""假装认识Kanta以从海盗手中取回 $gaDA_widget""","The comms open and before you stands the pirate leader. ""What do you want, scavenger?"" $heOrShe says with contempt.
 
-""This is our cache and if you know what's best you'll be burning along to find some shiny bits out elsewhere to grub at.""","
-","gaDA_offerToBuy:Offer to buy what they found in the derelict
-gaDA_threaten:Threaten to attack if they don't surrender the mission target
-gaDA_kantaSentMe:""Kanta sent me. She wants her prize.""",,,
+""This is our cache and if you know what's best you'll be burning along to find some shiny bits out elsewhere to grub at.""","通讯打开，在你面前站着海盗头目。""你想要什么，拾荒者?"" $heOrShe轻蔑地说道。
+
+""这是我们的储藏点，如果你识相的话，你最好马上去别的有闪光碎片的地方去挖掘。""","gaDA_offerToBuy:提议购买他们在残骸中找到的东西
+gaDA_threaten:威胁他们不交出任务目标会进行攻击
+gaDA_kantaSentMe:""Kanta派我来的。她可以交换。""","gaDA_offerToBuy:提议购买他们在残骸中找到的东西
+gaDA_threaten:威胁他们不交出任务目标会进行攻击
+gaDA_kantaSentMe:""Kanta派我来的。她可以交换。""",,
 gaDAPirateOfferToBuy,DialogOptionSelected,$option == gaDA_offerToBuy,"SetTextHighlights $gaDA_piratePayment
 $gaDA_piratePrice = $gaDA_piratePayment 0
 DoCanAffordCheck $gaDA_piratePrice gaDA_buyAgree false","You explain to the pirate captain that you know exactly what they've found, and it's only really useful to a bunch of bookish academics. Despite being useless dirt-worms, they'll give good credits for certain pieces of garbage that you find in a long-standing arrangement. If the Pirates sell it to you now it'll save them a long trip to the core worlds. And having to deal with the most condescending fools in the entire Sector.
 
 $HeOrShe considers your words, then says ""You make some good points, captain. I do hate it when worthless mud-boots try to talk down to me. And,"" $heOrShe gives you a fierce look, ""I don't need another mass murder charge on my bounty just for some piece of junk."" 
 
-After some additional implied threats and a bit of negotiation on your part,  the pirate captain offers to sell you what they found for $gaDA_piratePayment credits.","
-","gaDA_buyAgree:Agree to their price
+After some additional implied threats and a bit of negotiation on your part,  the pirate captain offers to sell you what they found for $gaDA_piratePayment credits.","你想海盗舰长解释你完全知道他们发现了什么，并且它只对一群学究似的学者有用。尽管它们是无用的垃圾虫，学者们仍然你找到的某些长期合同中的垃圾碎片给出不少的星币。如果海盗把它卖给你，他们就不用去核心星系了，并且不需要对付整个行业中最傲慢的傻瓜。
+
+$HeOrShe考虑着你的话，随后说道：""你说的很好，舰长。我确实讨厌那些没用的泥靴居高临下地对我说话。并且，"" $heOrShe了你一个凶狠的眼神，""我不想仅仅为一件破烂导致我的赏金上又来一次大规模谋杀指控。"" 
+
+在一些额外的暗示威胁和谈判之后, 海盗舰长愿意以 $gaDA_piratePayment 星币的价格出售他们找到的东西。","gaDA_buyAgree:Agree to their price
 gaDA_buyDecline:Decline, it�s simply not worth it
-gaDA_buyDeclineAggro:""I've decided to take it from you by force.""",,,
+gaDA_buyDeclineAggro:""I've decided to take it from you by force.""","gaDA_buyAgree:同意他们的价格
+gaDA_buyDecline:拒绝，完全不值这个价
+gaDA_buyDeclineAggro:""我已经决定使用武力从你这拿走它。""",,
 gaDAPirateBuyConfirm,DialogOptionSelected,$option == gaDA_buyAgree,"RemoveCommodity credits $gaDA_piratePrice
 $global.gaDA_gotWidget = true
 Call $global.gaDA_ref updateStage
@@ -839,18 +852,20 @@ ShowDefaultVisual",,"
 ",,,,
 gaDAPirateBuyDeclinePolite,DialogOptionSelected,$option == gaDA_buyDecline,"MakeOtherFleetNonHostile gaDA true
 EndConversation
-ShowDefaultVisual","You cut the comm link after explaining to the pirate captain that you wouldn't make enough on the deal to cover your expenses. The rapport you've established during the negotiation seems to incline $himOrHer to let you go, at least for the moment.","
-",,,,
+ShowDefaultVisual","You cut the comm link after explaining to the pirate captain that you wouldn't make enough on the deal to cover your expenses. The rapport you've established during the negotiation seems to incline $himOrHer to let you go, at least for the moment.",你向海盗舰长解释你不会在这场交易中支付足够的费用，并切断了通讯。你们在谈判中建立的融洽关系似乎倾向于让$himOrHer放你走，至少目前是这样。,,,,
 gaDADeclineBuyAggro,DialogOptionSelected,$option == gaDA_buyDeclineAggro,,"""Oh, I see how it is,"" the pirate captain snarls, raising a gauntleted fist. ""If you were going to make me kill you anyway, why'd you waste precious atmo with all that chum talk?""
 
-The comms snap to static; you speculate that you don't hear that fist slam on the pirate's console because the link cut out just before the shock reverberated to the pickups. Yes, that explains it. You turn to find that your tactical officer has just finished sending a combat alert to the $shipOrFleet.","
-",cutCommLinkNoText:Continue,,,
+The comms snap to static; you speculate that you don't hear that fist slam on the pirate's console because the link cut out just before the shock reverberated to the pickups. Yes, that explains it. You turn to find that your tactical officer has just finished sending a combat alert to the $shipOrFleet.","""哦，好吧，"" 海盗舰长，举起一只带着手套的拳头。""如果你本来就想让我杀了你，你为什么要把宝贵的空气浪费在那些亲密的谈话上？""
+
+通讯忽然安静了; 你推测由于在声音传到拾音器之前链接就断开了，你没有听到海盗控制台上的拳头声音。是的，这解释的通。紧接着，你发现你的战术官刚刚向$shipOrFleet发送完战斗警告。
+",cutCommLinkNoText:Continue,cutCommLinkNoText:继续,,
 gaDADeclineBuyAggroStronger,DialogOptionSelected,"$option == gaDA_buyDeclineAggro
 $entity.relativeStrength < 0","SetTextHighlights $gaDA_piratePaymentLow
 $gaDA_piratePrice = $gaDA_piratePaymentLow 0
-DoCanAffordCheck $gaDA_piratePrice gaDA_buyAgree false","The pirate captain cries out in a panic, $hisOrHer contemptuous airs dispelled in a moment. ""Wait! We�re just doing business here, I can compromise!"" $HeOrShe sweats, visibly calculating for a moment, ""How about $gaDA_piratePaymentLow credits for this piece of junk? Be reasonable, captain, we can make this work for both of us.""","
+DoCanAffordCheck $gaDA_piratePrice gaDA_buyAgree false","The pirate captain cries out in a panic, $hisOrHer contemptuous airs dispelled in a moment. ""Wait! We�re just doing business here, I can compromise!"" $HeOrShe sweats, visibly calculating for a moment, ""How about $gaDA_piratePaymentLow credits for this piece of junk? Be reasonable, captain, we can make this work for both of us.""","海盗舰长惊慌失措地喊道，$hisOrHer轻蔑的情绪一会儿就消散了。 ""等一下！我们只是在做生意！我可以妥协！"" $HeOrShe额头冒汗，计算了好一会儿，""这件破烂给 $gaDA_piratePaymentLow 星币怎么样? 讲道理，舰长，我们可以双赢。""
 ","gaDA_buyAgree:Accept the new price
-cutCommLink:Decline. Snap comms off and power up battle-systems.",,,
+cutCommLink:Decline. Snap comms off and power up battle-systems.","gaDA_buyAgree:接受新价格
+cutCommLink:拒绝。切断通讯并启动战斗系统。",,
 gaDAThreatenToAttack,DialogOptionSelected,"$option == gaDA_threaten
 $entity.relativeStrength < 0",$gaDA_piratePrice = 0 0,"The pirate captain laughs heartily, but you detect just a note of panic underlying the bravado. ""Oh, well done. I thought we were the pirates here, but no it is you. I admire you, captain.""
 
