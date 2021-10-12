@@ -1007,7 +1007,7 @@ You explain, referencing the details you now recall, that they are the $personNa
 根据回忆到的一些细节，你解释道，他们是$personName，效力于Provenance Supply Stock Combine(原产地供应库存联合公司PSSC)的长期合同，被使用APCC进行了注册 —— Agreus Provisional Commerce Concordat(阿格雷斯临时商业协约)。幸好是他们碰到了你，而不是在返回Nortia的时候发现情况不对。
 
 ""发现什么？"" $heOrShe用平淡的声音说，预想着坏消息。
-","gaDA_scavBluff2:""The results of the investigation, of course.""",,,
+","gaDA_scavBluff2:""The results of the investigation, of course.""","gaDA_scavBluff2:""当然是调查的结果。""",,
 gaDAScavBluff2,DialogOptionSelected,$option == gaDA_scavBluff2,,"$HeOrShe looks worried, ""The investigation?""
 
 You shake your head as you tell of the scandal and subsequent legal action that has toppled most of the board of directors of the PSSC after the APCC was tipped off about funds being shuffled between certain providers of 'ghost capital' in a scheme involving heavy weapons smuggled into Pather space leveraged off prime Eventide real estate. The rot goes deep, and with interfactional diplomatic pressure, the Concordat will see more heads roll in the upcoming cycle, that's for sure.
@@ -1036,17 +1036,20 @@ The scavenger looks at you with grim determination as you say your goodbyes. ""B
 ",,,,
 # scan celestial object mission,,,,,"
 ",,,,
-gaCOBlurb,gaCO_blurb,,,"""A team in $gaCO_department would like a special instrument package run on $gaCO_celestialObjectNameWithTypeShort in the $gaCO_starName system.""","
+gaCOBlurb,gaCO_blurb,,,"""A team in $gaCO_department would like a special instrument package run on $gaCO_celestialObjectNameWithTypeShort in the $gaCO_starName system.""","""$gaCO_department的小组想要在$gaCO_starName星系的$gaCO_celestialObjectNameWithTypeShort上运行特殊仪器包。""
 ",,,,
 gaCOOfferOption,gaCO_option,,,,"
-",gaCO_start:Ask about the $gaCO_celestialObjectType scan,,,
+",gaCO_start:Ask about the $gaCO_celestialObjectType scan,gaCO_start:询问关于$gaCO_celestialObjectType扫描的情况,,
 gaCOMissionTextBasic,DialogOptionSelected,"$option == gaCO_start
 $gaCO_variation != PULSAR","$missionId = gaCO
 SetTextHighlights $gaCO_dist $gaCO_reward","""They just want you to run the, um, a standard orbital approach pre-coded into the instrument package put together by $gaCO_department. Just enter a standard orbit of $gaCO_celestialObjectNameWithTypeLong in the $gaCO_starName system, about $gaCO_dist light-years away, and the gadget will take care of the rest when you activate it. It'll send out its own hyperwave pulse to signal completion and that'll release the honorarium of $gaCO_reward credits to your account."" 
 
-""Easy, right?"" $HeOrShe smiles brightly, ""You barely have to do anything.""","
+""Easy, right?"" $HeOrShe smiles brightly, ""You barely have to do anything.""","""他们只是想让你运行，嗯，一个预先编码到由$gaCO_department组装的仪器包中的标准轨道进近程序。只需要进入$gaCO_starName星系的$gaCO_celestialObjectNameWithTypeLong的标准轨道，距此处大概$gaCO_dist光年。这个小工具被激活后会自动处理剩下的事情。它会发出自己的超波脉冲信号来表示任务已经完成。这将会发放$gaCO_reward星币的酬金到你的账户。"" 
+
+""很简单，不是吗？"" $HeOrShe爽朗地笑了笑，""你几乎什么都不用做。""
 ","aseb_accept:Accept
-aseb_decline:Decline",,,
+aseb_decline:Decline","aseb_accept:接受
+aseb_decline:拒绝",,
 gaCOMissionTextBasicSlipUp,DialogOptionSelected,"$option == gaCO_start
 $gaCO_variation != PULSAR
 $gaCO_slipUp","$missionId = gaCO
