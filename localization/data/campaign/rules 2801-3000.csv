@@ -1053,38 +1053,58 @@ aseb_decline:拒绝",,
 gaCOMissionTextBasicSlipUp,DialogOptionSelected,"$option == gaCO_start
 $gaCO_variation != PULSAR
 $gaCO_slipUp","$missionId = gaCO
-SetTextHighlights $gaCO_dist $gaCO_reward","""They just want you to run the, um. It's a standard orbital approach pre-coded into the instrument package put together by the $gaCO_department. You just have it pass a course to your navigation system. Just enter a standard orbit of $gaCO_celestialObjectNameWithTypeLong in the $gaCO_starName system, about $gaCO_dist light-years away, and the gadget will take care of the rest. It'll send out its own hyperwave pulse to signal completion, and that'll release the honorarium of $gaCO_reward credits to your account."" 
+SetTextHighlights $gaCO_dist $gaCO_reward","""他们只是想让你运行，嗯，一个预先编码到由$gaCO_department组装的仪器包中的标准轨道进近程序。你只需要通过它将航线导入你的导航系统。Just enter a standard orbit of $gaCO_celestialObjectNameWithTypeLong in the $gaCO_starName system, about $gaCO_dist light-years away, and the gadget will take care of the rest. It'll send out its own hyperwave pulse to signal completion, and that'll release the honorarium of $gaCO_reward credits to your account."" 
 
-""Easy, right?"" $HeOrShe smiles brightly, ""I'm sure it'll go much better than the last expedition.""","
+""Easy, right?"" $HeOrShe smiles brightly, ""I'm sure it'll go much better than the last expedition.""","""他们只是想让你运行，嗯，一个预先编码到由$gaCO_department组装的仪器包中的标准轨道进近程序。你只需要通过它将航线导入到导航系统，进入$gaCO_starName星系的$gaCO_celestialObjectNameWithTypeLong的标准轨道，距此处大概$gaCO_dist光年。这个小工具会自动处理剩下的事情。它会发出自己的超波脉冲信号来表示任务已经完成。这将会发放$gaCO_reward星币的酬金到你的账户。"" 
+
+""很简单，不是吗？"" $HeOrShe爽朗地笑了笑，""我相信它会比上次探险好得多。""
 ","aseb_accept:Accept
 aseb_decline:Decline
-gaCO_excuseMe:""What was that about the last expedition?""",,,
+gaCO_excuseMe:""What was that about the last expedition?""","aseb_accept:接受
+aseb_decline:拒绝
+gaCO_excuseMe:""上次探险是怎么回事？""",,
 gaCOMissionTextBasicSlipUp1,DialogOptionSelected,$option == gaCO_excuseMe,,"""Oh!"" Academician Sebestyen turns a shade of red, ""The ... yes. No. I mean, well, I wasn't supposed to mention it. You won't tell the provost will you?""
 
-He looks legitimately concerned.","
+He looks legitimately concerned.","""噢！"" 学者Sebestyen脸色变红了，""它... 是的。不是。我是说，我本来不该提的。你不会告诉院长吧？""
+
+他看起来很担心。
 ","gaCO_excuseMe1:""Just tell me what happened.""
-aseb_decline:Decline the mission",,,
+aseb_decline:Decline the mission","gaCO_excuseMe1:""告诉我发生了什么。""
+aseb_decline:拒绝这个任务",,
 gaCOMissionTextBasicSlipUp2,DialogOptionSelected,$option == gaCO_excuseMe1,,"""Okay, okay. I uh, what happened I guess is that maybe the Pathers found out? That we were sending a probe? And, well. They didn't like that. So.""
 
-He trails off, perhaps hoping you'll just let it go.","
+He trails off, perhaps hoping you'll just let it go.","""好,好。我，呃，我猜也许是路德左径的藏身处被发现了？也许是我们发射过一个探测器？嗯。他们不喜欢这个。所以。""
+
+他说话逐渐小声，也许希望你后面不要再追问。
 ","gaCO_excuseMe2:""So... ?""
-aseb_decline:Decline the mission",,,
+aseb_decline:Decline the mission","gaCO_excuseMe2:""所以... ？""
+aseb_decline:拒绝这个任务",,
 gaCOMissionTextBasicSlipUp3,DialogOptionSelected,$option == gaCO_excuseMe2,,"""So. Well, it didn't end well. And maybe they lost half their fleet, maybe, including the probe. It was all very awkward, let me tell you. The whole situation still gives me anxiety."" 
 
 You can believe that without reservation.
 
-He looks to you hopefully. ""So you'll run this instrument package for the $gaCO_department team?""","
+He looks to you hopefully. ""So you'll run this instrument package for the $gaCO_department team?""","""所以嗯，结局并不好。也许探险队失去了一半的舰队，可能也包括探测器。说起来这一切都很尴尬。整个事态依然让我焦虑不安。"" 
+
+你可以毫无保留地相信这件事。
+
+他满怀希望地看着你。""所以你愿意为$gaCO_department小组运行这个仪器包吗？""
 ","aseb_accept:""Yes. And I'll be very careful."" (accept) 
-aseb_decline:""No, I don't need more trouble with Pathers."" (decline)",,,
+aseb_decline:""No, I don't need more trouble with Pathers."" (decline)","aseb_accept:""好吧。我会非常小心的。"" (接受) 
+aseb_decline:""不，我没必要再惹上路德左径的麻烦。"" (拒绝)",,
 gaCOMissionTextBasicHoloarts,DialogOptionSelected,"$option == gaCO_start
 $gaCO_holoarts score:100","$missionId = gaCO
 SetTextHighlights $gaCO_dist $gaCO_reward","Academician Sebestyen seems especially excited to tell you about this mission; you can tell by how his eyes light up.
 
 ""Applied Holoarts, how fun! They have this amazing all-frequencies high-res holoscan matrix and it makes just the most wonderful holos. Let's see, the team just wants you to run their pre-coded approach on $gaCO_celestialObjectNameWithTypeLong in the $gaCO_starName system, about $gaCO_dist light-years away. The instrument package will take care of everything automatically once you're at the mission target, you just need to watch the show. When it's done, it'll send a hyperwave pulse to signal completion, and that'll release the honorarium of $gaCO_reward credits to your account."" 
 
-Academician Sebestyen finally takes a breath, and you take this moment of quiet to consider the logistics of the operation. ""I wonder what this scan is for, I can't wait to see it,"" he says. ""This'll be so neat!""","
+Academician Sebestyen finally takes a breath, and you take this moment of quiet to consider the logistics of the operation. ""I wonder what this scan is for, I can't wait to see it,"" he says. ""This'll be so neat!""","学者Sebestyen想你讲述这项任务时似乎非常兴奋；你可以看到他的眼神在发光。
+
+""实用全息艺术，多么有趣！他们有一个惊人的全频高分辨率全息扫描矩阵。它能够制作几乎最精彩的全息图。让我看一下，小组只是想让你在$gaCO_starName星系的$gaCO_celestialObjectNameWithTypeLong上运行他们预编码好的路径。那里大约距此处$gaCO_dist光年。一旦你到达任务目标处，仪器包将自动处理一切。你只需要欣赏它的表演。当它完成时，它会发出自己的超波脉冲信号来表示任务已经完成。这将会发放$gaCO_reward星币的酬金到你的账户。"" 
+
+学者Sebestyen终于喘了口气。你在这一刻安静地考虑行动如何实施。""我想知道这次扫描是为了什么，我迫不及待地想看看，"" 他说道，""它的动作将非常流畅简洁！""
 ","aseb_accept:Accept
-aseb_decline:Decline",,,
+aseb_decline:Decline","aseb_accept:接受
+aseb_decline:拒绝",,
 gaCOMissionTextBasicPulsar,DialogOptionSelected,"$option == gaCO_start
 $gaCO_variation == PULSAR","$missionId = gaCO
 SetTextHighlights $gaCO_dist","""Right. Yes."" Academician Sebestyen seems nervous, but after a moment of ever-so-brief inner turmoil, appears to make the decision to power through the briefing.
