@@ -1111,29 +1111,38 @@ SetTextHighlights $gaCO_dist","""Right. Yes."" Academician Sebestyen seems nervo
 
 ""... Okay. For this one you would need to go to $gaCO_celestialObjectNameWithTypeShort in the $gaCO_starName system, which is $gaCO_dist light-years away. Once in orbit of the target, the instrument package provided by the $gaCO_department team will link to your navigation system with the necessary information to do the, um, sweep. And um. You�ll want to time this very carefully because, um.""
 
-Is his resolve wavering? ","
-",gaCO_pulsarCont:Raise a single eyebrow,,,
+Is his resolve wavering? ","""哦，好。"" 学者Sebestyen似乎有点紧张，但在经历了短暂的内心波动之后，像是决定了要做详细介绍。
+
+""... 好吧。为了完成任务你需要前往$gaCO_starName星系的$gaCO_celestialObjectNameWithTypeShort，距此处$gaCO_dist光年。一旦进入目标轨道，$gaCO_department小组提供的仪器包会接入你的导航系统，并提供必要的信息以完成，呃，清扫。接着，你要非常小心地计时。因为，呃。""
+
+他的决心动摇了吗？
+",gaCO_pulsarCont:Raise a single eyebrow,gaCO_pulsarCont:翘起一条眉毛,,
 gaCOMissionTextBasicPulsarCont,DialogOptionSelected,$option == gaCO_pulsarCont,SetTextHighlights $gaCO_reward,"This seems to set the academician back on course. ""What you need to know is that, ah, $gaCO_starName is a pulsar. So you'll have to be very careful, right? I mean, it's not so bad, you just need to time your approach. Right? And,"" he seems to perk up, ""you'll get to see rapidly spinning jets of high energy charged particles, it'll be the most amazing show!""
 
-""The package will ping us with an encrypted hypercomms pulse once it's, and that'll release your funds. Oh! Right, the honorarium is $gaCO_reward credits. That's important."" He lets out a breath, looking relieved to have finished the briefing.","
+""The package will ping us with an encrypted hypercomms pulse once it's, and that'll release your funds. Oh! Right, the honorarium is $gaCO_reward credits. That's important."" He lets out a breath, looking relieved to have finished the briefing.","这似乎让这位学者回过神来。""你需要知道的是，呃，$gaCO_starName是一颗脉冲星。所以你要非常小心，对吧？我的意思是，没那么糟糕，你只需要给你的路线限制时间。对吧？接着，""他似乎振作了起来，""你会看到高速旋转的高能带电粒子喷流，这将是最精彩的表演！""
+
+""一旦仪器包完成工作，它将使用一条加密的超通讯脉冲知会我们，接着就会释放你的酬金。哦！对了，酬金是$gaCO_reward星币。这很重要。"" 他松了一口气，如释重负地结束了介绍。
 ","aseb_accept:Accept
-aseb_decline:Decline",,,
+aseb_decline:Decline","aseb_accept:接受
+aseb_decline:拒绝",,
 # celestial object interaction,,,,,"
 ",,,,
 gaCOPrintHostilesText,OpenInteractionDialog,"$gaCO_object score:1000
 HostileFleetNearbyAndAware
-Call $global.gaCO_ref updateData",ShowDefaultVisual,"A nearby hostile fleet is tracking your movements, preventing you from executing the maneuvers programmed into the scan package.","
-",defaultLeave:Leave,,,
+Call $global.gaCO_ref updateData",ShowDefaultVisual,"A nearby hostile fleet is tracking your movements, preventing you from executing the maneuvers programmed into the scan package.","附近的敌对舰队正在跟踪你的行动，使你不能运行扫描包中的机动程序。
+",defaultLeave:Leave,defaultLeave:离开,,
 gaCOObjectInteraction,OpenInteractionDialog,"$gaCO_object score:1000
 Call $global.gaCO_ref updateData",ShowDefaultVisual,"Your nav officer reports that your $shipOrFleet has arrived at the coordinates provided by the $gaCO_department team. It's time to activate the instrument package. Your nav officer nods as you confirm that their subsystem is ready for input. The ops chief gives a thumbs-up to indicate that the instruments are deployed according to instruction.
 
-The go-button flashes softly on your command interface.","
-",gaCO_scan:Execute the scan,,,
+The go-button flashes softly on your command interface.","你的导航官报告你的$shipOrFleet已经抵达$gaCO_department小组提供的坐标。是时候激活仪器包了。当你向他们确认子系统准备好接收数据时，你的导航官点了点头。行动队长竖起拇指，表示仪器已经按指示部署完成。
+激活按钮在你的命令界面上轻轻闪烁。
+",gaCO_scan:Execute the scan,gaCO_scan:执行扫描,,
 gaCOObjectScan,DialogOptionSelected,$option == gaCO_scan,"$global.gaCO_scanCompleted = true
 Call $global.gaCO_ref updateStage","Maneuvering thrusters activate in a series of tight bursts setting you on a graceful arc like a calligraphic stroke across the $gaCO_celestialObjectType before you.
 
-Systems indicate a power drain, and in mere minutes the procedure is complete. Your comms officer reports a small hypercomms pulse, the signal to the Galatia Academy to release your payment. Your bridge crew reports in turn, status normal, ready to resume course.","
-",defaultLeave:Leave,,,
+Systems indicate a power drain, and in mere minutes the procedure is complete. Your comms officer reports a small hypercomms pulse, the signal to the Galatia Academy to release your payment. Your bridge crew reports in turn, status normal, ready to resume course.","机动推进器在一连串喷射后启动，将你置于一条优美的弧线上，像书法的笔墨划过你面前的$gaCO_celestialObjectType。
+
+系统提示能源耗尽，仅仅几分钟操作就完成了。你的通讯官报告了一条小的超通讯脉冲。这是向Galatia学院发送的释放你报酬的通知信号。你的舰桥船员依次报告，状态正常，准备恢复航向。",defaultLeave:Leave,defaultLeave:离开,,
 # CO pather conversations - before scan,,,,,"
 ",,,,
 gaCOPatherEncounterBefore,BeginFleetEncounter,"$gaCO_patherMissionInProgress score:1000
@@ -1145,43 +1154,62 @@ HailPlayer",,"
 gaCOPatherOpenComm,OpenCommLink,"$entity.gaCO_patherMissionInProgress score:1000
 !$entity.ignorePlayerCommRequests
 Call $global.gaCO_ref updateData","$entity.ignorePlayerCommRequests = true
-SetStoryOption gaCO_convince 1 gaCO_convince general ""Convinced Pather captain you were one of them""","The channel opens to the scowling face of a Pather fanatic. ""Defiler! Interloper!� $HeOrShe spits the words. ""We know well of your kind, for you are not the first to be sent from the Galatia Academy, that foul temple of Belial which vomits up corrupt servants to broadcast profanities upon holy creation!""
+SetStoryOption gaCO_convince 1 gaCO_convince general ""路德左径舰长被说服你是他们的一份子""","The channel opens to the scowling face of a Pather fanatic. ""Defiler! Interloper!� $HeOrShe spits the words. ""We know well of your kind, for you are not the first to be sent from the Galatia Academy, that foul temple of Belial which vomits up corrupt servants to broadcast profanities upon holy creation!""
 
 ""Eject the demonic artifact,"" $heOrShe hisses the words like they're a curse, ""so that we may eliminate it. After this act of supplication, and only after, we might consider praying for your forgiveness, blessing of Ludd be upon even those who malign his Path.""
 
-You consider the situation. If you eject the instrument package for the Pathers to play target practice with, the Galatia Academy won't be pleased, and you haven't been paid yet. Still, it's likely to avoid a fight.","
+You consider the situation. If you eject the instrument package for the Pathers to play target practice with, the Galatia Academy won't be pleased, and you haven't been paid yet. Still, it's likely to avoid a fight.","通信频道接通，露出一张路德左径狂热者怒目而视的脸。""亵渎者！闯入者！"" $HeOrShe吐出几个词。""我们太了解你们这类人了，因为你不是第一个被从Galatia学院派来的。这个Belial的肮脏圣殿，不停地吐出腐败的仆人，向神圣造物传播亵渎！""
+
+""放出恶魔的造物，"" $heOrShe嘶嘶地说着些话就像是诅咒，""这样我们才可以消除它。祈祷吧，只有祈祷，我们才会祈求你受到原谅，路德的祝福甚至会降临到那些诋毁他道路的人身上。""
+
+你考虑着局面。如果你放出仪器包供路德左径做打靶练习，Galatia学院不会高兴的，并且你还没拿到报酬。然而，这可以避免一场战斗。
 ","gaCO_eject:Eject the research package
 gaCO_reject:Reject their demands and power up weapons
-gaCO_convince:Convince them to let you go",,,
+gaCO_convince:Convince them to let you go","gaCO_eject:放出调查包
+gaCO_reject:拒绝他们的要求并激活武器
+gaCO_convince:说服他们放你走",,
 gaCOPatherReject,DialogOptionSelected,$option == gaCO_reject,,"The Pather almost smiles, like $heOrShe expected and welcomes your rejection. Here, now, $heOrShe can prove that $heOrShe is a worthy martyr for the cause.
 
 ""Blessed be the holy void,"" the Pather says through eyes cast heavensward, ""Through this we return as dust to the stars, the crucible of our maker...""
 
-You cut the comms.","
-",cutCommLinkNoText:Continue,,,
+You cut the comms.","对方几乎笑了出来。情况正如$heOrShe所料并欢迎你的拒绝。此时此地，$heOrShe可以证明$heOrShe是这项事业有价值的殉道者。
+
+""愿神圣虚空保佑我们，"" 这名狂热者说着，眼睛望向了天堂，""通过这一切，我们就能像尘埃一样回到群星，这伟大造物主的熔炉之中...""
+
+你切断了通讯。
+",cutCommLinkNoText:Continue,cutCommLinkNoText:继续,,
 gaCOPatherReject1,DialogOptionSelected,$option == gaCO_eject,"$global.gaCO_gaveScannerToPathers = true
-Call $global.gaCO_ref updateStage","The Pather captain looks more than a little surprised that you accepted their offer, and $heOrShe seems satisfied to see you eject the instrument package, which is quickly blasted by weapons-fire.","
-",gaCO_ejectCont1:Continue,,,
+Call $global.gaCO_ref updateStage","The Pather captain looks more than a little surprised that you accepted their offer, and $heOrShe seems satisfied to see you eject the instrument package, which is quickly blasted by weapons-fire.","你接受了他们的提议。这让路德左径的队长看起来非常惊讶。并且$heOrShe似乎很满意看到您放出了仪器包。紧接着，仪器包就被喷吐着火舌的武器炸毁了。
+",gaCO_ejectCont1:Continue,gaCO_ejectCont1:继续,,
 gaCOPatherReject2,DialogOptionSelected,$option == gaCO_ejectCont1,"MakeOtherFleetNonHostile gaCO true
 MakeOtherFleetGoAway true
 AdjustRep $personFaction.id COOPERATIVE 1","""Now,"" $heOrShe intones, to $himOrHerself, to you, to the crew listening, ""together we pray.""
 
-The Pather captain leads you through a classic Luddic prayer, begging forgiveness and of harming not holy creation. You stumble through the bits you happen to know, and mumble along with the rest. The Pather seems content with your effort, at least.","
-",gaCO_ejectCont2:Continue,,,
+The Pather captain leads you through a classic Luddic prayer, begging forgiveness and of harming not holy creation. You stumble through the bits you happen to know, and mumble along with the rest. The Pather seems content with your effort, at least.","""现在，"" $heOrShe向自己，向你，向听着的船员们吟诵道，""我们一起起到。""
+
+这名舰长带领你进行了经典的路德式祈祷，祈求原谅，祈求没有伤害神圣造物。你跌跌撞撞地进行着，依靠你碰巧知道的一点知识，和其他人一起咕哝着。万幸，这名路德左径似乎对你的努力感到满意。
+",gaCO_ejectCont2:Continue,gaCO_ejectCont2:继续,,
 gaCOPatherReject3,DialogOptionSelected,$option == gaCO_ejectCont2,,"""It is a long path to redemption,"" the Pather captain tells you, finally, ""And this is but the first step. Blessings of Ludd be upon you.""
 
-You cut the comms and consider your next move.","
-",cutCommLinkNoText:Continue,,,
+You cut the comms and consider your next move.","""这是一条漫长的救赎之路，"" 路德左径的舰长告诉你，最终道，""这仅仅是第一步，愿路德保佑你。""
+
+你切断了通讯，考虑下一步行动。
+",cutCommLinkNoText:Continue,cutCommLinkNoText:继续,,
 gaCOPatherConvince1,DialogOptionSelected,$option == gaCO_convince,,"You know how these Pathers work. It's not hard.
 
 You put on a look of grave concern, ""$BrotherOrSister, I fear you have misunderstood the situation completely. It is true that we had contact with the academicians, those priests of Belial in their ivory temple of hubris and spiritual decay, but it is not as you assume.""
 
-Confusion begins to grow on $personFirstName's face as $heOrShe tries to process words like these coming from you.","
-",gaCO_convinceCont1:Continue,,,
+Confusion begins to grow on $personFirstName's face as $heOrShe tries to process words like these coming from you.","你了解这些路德左径人。这并不难。
+你装出一副忧心忡忡的样子, ""$BrotherOrSister，恐怕你完全误解了状况。我们确实与学者们有过接触，这些Belial的教士在他们的象牙神殿里狂妄自大，精神堕落。但这并不是你想象的那样。""
+
+$personFirstName的脸上逐渐疑惑。$heOrShe在试着理解你说的这些话。
+",gaCO_convinceCont1:Continue,gaCO_convinceCont1:C继续,,
 gaCOPatherConvince2,DialogOptionSelected,$option == gaCO_convinceCont1,,"You clasp hands together dramatically, and recite as if to the congregation.
 
-""I pray for you, $brotherOrSister, to follow my lead on this Path. We do as the disciple Amity did when she did allow those who sought sin to undo their own work through misunderstanding. Witness: that we have taken this demonic device far from their temple of lies, and yea, we shall throw it down this gravity well that it might burn up and be only atoms once more as clay to be wrought by the ways of Creation.""","
-",gaCO_convinceCont2:Continue,,,
+""I pray for you, $brotherOrSister, to follow my lead on this Path. We do as the disciple Amity did when she did allow those who sought sin to undo their own work through misunderstanding. Witness: that we have taken this demonic device far from their temple of lies, and yea, we shall throw it down this gravity well that it might burn up and be only atoms once more as clay to be wrought by the ways of Creation.""","你紧紧地将双手扣在一起，仿佛在向会众吟诵。
+
+""我为你祈祷，$brotherOrSister，追随我在这条道路上的指引。我们就像信徒Amity做的那样。她允许那些罪犯弥补他们因为误解犯下的过错。路德在上，我们已经把这个恶魔的装置从他们的谎言圣殿中带走了。是的，我们应该把它扔到重力井中，让它燃烧起来，再次成为原子，像粘土一样利用造物的方式改变它。""
+",gaCO_convinceCont2:Continue,gaCO_convinceCont2:继续,,
 gaCOPatherConvince3,DialogOptionSelected,$option == gaCO_convinceCont2,,"You allow a smile to break over your clasped hands, like a dawn of spiritual inspiration.
 
 ""Was not Ludd fond of a good joke, to fool the unbeliever in gentle mockery, and so convey a lesson of the spirit? Do we not follow the Path by undoing a sinful work? Let us pray together, $brotherOrSister, then each go our own way to serve Holy Creation.""
