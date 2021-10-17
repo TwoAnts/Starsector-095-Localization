@@ -782,7 +782,7 @@ gaDADerelictScavengerStart,GADADerelictInteraction,$gaDA_variation == SCAVENGER,
 
 You send out a salvage team knowing what they'll find, and they perform their sweep with cautious efficiency. Your mission target is missing; you order the team's telemetry and holo feeds to be attached to the mission file as proof that you performed this job for the Academy to the best of your ability.","你接近了残骸。你的传感器操作员指出你们并不是首先发现这里的迹象：目标船身周围的废气和碎片显示最近有过一次打捞行动。""... 并且他们是专业人士,"" 你的行动队长相当尊重地说道。 先到的人在关键接入点上制造了有效的切口，只留下一张整齐的线网，固定在深空打捞鼠喜欢的钻孔岩钉上。
 
-尽管可能什么也找不到，你依然派遣了打捞小组。他们进行了谨慎高效地清扫。你的任务目标失踪了; 你命令将小组的通讯和全息反馈附到任务档案里作为你尽力为学院完成工作的证据。",gaDA_continueScav:Continue,,,
+尽管可能什么也找不到，你依然派遣了打捞小组。他们进行了谨慎高效地清扫。你的任务目标失踪了; 你命令将小组的通讯和全息反馈附到任务档案里作为你尽力为学院完成工作的证据。",gaDA_continueScav:Continue,gaDA_continueScav:继续,,
 gaDADerelictScavengerCont,DialogOptionSelected,$option == gaDA_continueScav,"$global.gaDA_scavengerTookIt = true
 Call $global.gaDA_ref updateStage","""Captain."" Your operations chief calls attention to an active screen displaying the residual heat around the breaching cuts. ""They're still hot. We might be able to catch the scavengers who made these cuts.""
 
@@ -1203,7 +1203,7 @@ Confusion begins to grow on $personFirstName's face as $heOrShe tries to process
 你装出一副忧心忡忡的样子, ""$BrotherOrSister，恐怕你完全误解了状况。我们确实与学者们有过接触，这些Belial的教士在他们的象牙神殿里狂妄自大，精神堕落。但这并不是你想象的那样。""
 
 $personFirstName的脸上逐渐疑惑。$heOrShe在试着理解你说的这些话。
-",gaCO_convinceCont1:Continue,gaCO_convinceCont1:C继续,,
+",gaCO_convinceCont1:Continue,gaCO_convinceCont1:继续,,
 gaCOPatherConvince2,DialogOptionSelected,$option == gaCO_convinceCont1,,"You clasp hands together dramatically, and recite as if to the congregation.
 
 ""I pray for you, $brotherOrSister, to follow my lead on this Path. We do as the disciple Amity did when she did allow those who sought sin to undo their own work through misunderstanding. Witness: that we have taken this demonic device far from their temple of lies, and yea, we shall throw it down this gravity well that it might burn up and be only atoms once more as clay to be wrought by the ways of Creation.""","你紧紧地将双手扣在一起，仿佛在向会众吟诵。
@@ -1214,13 +1214,17 @@ gaCOPatherConvince3,DialogOptionSelected,$option == gaCO_convinceCont2,,"You all
 
 ""Was not Ludd fond of a good joke, to fool the unbeliever in gentle mockery, and so convey a lesson of the spirit? Do we not follow the Path by undoing a sinful work? Let us pray together, $brotherOrSister, then each go our own way to serve Holy Creation.""
 
-You lead the befuddled Pather in a classic Luddic prayer without missing a word, then exchange fond farewells and blessings with $personName. After you close the channel, you stop a moment to find your bridge crew looking at you with a combination of awe and confusion.","
-","gaCO_convinceCont3:""To your stations.""",,,
+You lead the befuddled Pather in a classic Luddic prayer without missing a word, then exchange fond farewells and blessings with $personName. After you close the channel, you stop a moment to find your bridge crew looking at you with a combination of awe and confusion.","你让一个微笑绽放在紧扣的双手之上，就像精神启迪的黎明。
+
+""路德难道不是喜欢开玩笑，用温和的嘲弄来愚弄不信者，从而传达圣灵的教训吗? 难道我们不是通过消除邪恶来遵循这条道路的吗？让我们一起祈祷，$brotherOrSister，然后各自用自己的方式去侍奉神圣的造物。""
+
+你引领着这名困惑的路德左径成员进行了一次经典的路德式祈祷，一句话也没有漏掉，然后和$personName互相道别和祝福。在你关闭通讯频道之后，你停下片刻，发现你的舰桥船员怀着既敬畏又困惑的心情看着你。
+","gaCO_convinceCont3:""To your stations.""","gaCO_convinceCont3:""回到各自岗位。""",,
 gaCOPatherConvince4,DialogOptionSelected,$option == gaCO_convinceCont3,"MakeOtherFleetNonHostile gaCO true
 MakeOtherFleetGoAway true
 AdjustRep $personFaction.id COOPERATIVE 5
-Call $entity.gaCO_ref makeUnimportant",They snap back to their duties. It would be a good idea to let the Pathers travel out of sensor range before beginning the scan.,"
-",cutCommLinkNoText:Continue,,,
+Call $entity.gaCO_ref makeUnimportant",They snap back to their duties. It would be a good idea to let the Pathers travel out of sensor range before beginning the scan.,"他们迅速回到了自己的工作中。最好等路德左径离开探测器范围后再开始扫描。
+",cutCommLinkNoText:Continue,cutCommLinkNoText:继续,,
 # CO pather conversations - after scan,,,,,"
 ",,,,
 gaCOPatherEncounterAfter,BeginFleetEncounter,"!$gaCO_patherMissionInProgress
@@ -1236,9 +1240,14 @@ DoCanAffordCheck $entity.gaCO_patherTithe gaCO_ejectAfter false","The channel op
 
 Is that all? No - the Pather was drawing breath to continue the tirade ""- Then pay us a goodly sum, a tithe for your unholy crime, and only then we might consider praying for your forgiveness! Answer now, heretic!""
 
-You consider the situation. The job is already done, so you don�t need the instrument package. Paying off the Pathers would let you leave without a fight.","
+You consider the situation. The job is already done, so you don�t need the instrument package. Paying off the Pathers would let you leave without a fight.","通信频道接通，露出一张路德左径狂热者怒目而视的脸。""亵渎者！闯入者！"" $HeOrShe吐出几个词，像是在诅咒。""你们的放射能是对Belial的献祭，在神圣造物上传播亵渎！快放出你那恶魔般的科学机器，"" 这句话是嘶嘶的诅咒，""我们将在净化之火中毁灭它。""
+
+仅仅如此吗？不 —— 这名狂热者屏住呼吸继续长篇大论：""—— 然后给我们一笔可观的星币，作为你邪恶罪行的什一税。只有这样，我们才会考虑为你受到宽恕而祈祷。回答我，异教徒！""
+
+你考虑这形势。工作已经完成，所以你不再需要仪器包。向路德左径付钱可以让你免于战斗，安全离开。
 ","gaCO_ejectAfter:Eject the research package and pay a tithe of $entity.gaCO_patherTithe credits
-gaCO_reject:Reject their demands and power up weapons",,,
+gaCO_reject:Reject their demands and power up weapons","gaCO_ejectAfter:放出仪器包，并支付$entity.gaCO_patherTithe星币的什一税
+gaCO_reject:拒绝他们的要求并启动武器",,
 gaCOEjectAfter1,DialogOptionSelected,$option == gaCO_ejectAfter,"RemoveCommodity credits $entity.gaCO_patherTithe
 MakeOtherFleetNonHostile gaCO true
 MakeOtherFleetGoAway true
