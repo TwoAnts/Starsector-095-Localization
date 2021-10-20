@@ -1255,12 +1255,18 @@ AdjustRep $personFaction.id COOPERATIVE 2","The Pather captain looks more than a
 
 ""Now,"" $heOrShe intones, to $himOrHerself, to you, to the crew listening, ""together we pray.""
 
-The Pather captain leads you through a classic Luddic prayer, begging forgiveness and of harming not holy creation. You stumble through the bits you happen to know, and mumble along with the rest. The Pather seems content with your efforts.","
-",gaCO_ejectAfterCont1:Continue,,,
+The Pather captain leads you through a classic Luddic prayer, begging forgiveness and of harming not holy creation. You stumble through the bits you happen to know, and mumble along with the rest. The Pather seems content with your efforts.","这名路德左径舰长对你接受了他们的条件感到有点惊讶，并且在什一税传送时，似乎肉眼可见的平静了下来。
+
+""现在，"" $heOrShe对自己，对你，对听着的船员们吟诵道，""让我们一起祈祷。""
+
+这名路德左径舰长带领你进行了经典的路德式祈祷，祈求原谅，祈求没有伤害神圣造物。你跌跌撞撞地进行着，依靠你碰巧知道的一点知识，和其他人一起咕哝着。这名路德左径似乎对你的努力感到满意。
+",gaCO_ejectAfterCont1:Continue,gaCO_ejectAfterCont1:继续,,
 gaCOEjectAfter2,DialogOptionSelected,$option == gaCO_ejectAfterCont1,,"""It is a long path to redemption,"" the Pather captain tells you, finally, ""And this is but the first step in your atonement. Blessings of Ludd be upon you, traveller.""
 
-You cut the comms, roll your eyes, and consider your next move.","
-",cutCommLinkNoText:Continue,,,
+You cut the comms, roll your eyes, and consider your next move.","""这是一条漫长的救赎之路，"" 这名路德左径舰长最终告诉你，""这只是你赎罪的第一步。旅行者，愿路德保佑你。""
+
+你切断通讯，转动你的眼睛，考虑下一步的行动。
+",cutCommLinkNoText:Continue,cutCommLinkNoText:继续,,
 ,,,,,"
 ",,,,
 # GA retrieve instrument package from probe mission,,,,,"
